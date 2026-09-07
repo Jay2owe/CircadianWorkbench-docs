@@ -239,6 +239,8 @@
       
         
       
+        
+      
     
     
     
@@ -308,6 +310,34 @@
     
   
     Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/detrending/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a detrending method
   
 
     
@@ -2865,7 +2895,7 @@
 </tr>
 </tbody>
 </table>
-<h2 id="recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.detrend(self, method: 'str' = 'running mean', *, window_hours: 'float' = 24.0, polynomial_degree: 'int' = 3, min_valid_fraction: 'float' = 0.5, bandwidth_hours: 'float | None' = None, low_cut_hours: 'float' = 45.0, high_cut_hours: 'float' = 4.0, filter_order: 'int' = 2, smooth_window_hours: 'float' = 0.0, exclude_hours: 'float | None' = None, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<h2 id="recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-lowess_fraction-float-none-none-lowess_iterations-int-3-asls_smoothness-float-10000000-asls_asymmetry-float-001-asls_iterations-int-10-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.detrend(self, method: 'str' = 'running mean', *, window_hours: 'float' = 24.0, polynomial_degree: 'int' = 3, min_valid_fraction: 'float' = 0.5, bandwidth_hours: 'float | None' = None, low_cut_hours: 'float' = 45.0, high_cut_hours: 'float' = 4.0, filter_order: 'int' = 2, lowess_fraction: 'float | None' = None, lowess_iterations: 'int' = 3, asls_smoothness: 'float' = 1000000.0, asls_asymmetry: 'float' = 0.01, asls_iterations: 'int' = 10, smooth_window_hours: 'float' = 0.0, exclude_hours: 'float | None' = None, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-lowess_fraction-float-none-none-lowess_iterations-int-3-asls_smoothness-float-10000000-asls_asymmetry-float-001-asls_iterations-int-10-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -2892,37 +2922,67 @@
 <td><code>polynomial_degree</code></td>
 <td style="text-align: center;">no</td>
 <td><code>3</code></td>
-<td>Value used for <code>polynomial degree</code>.</td>
+<td>Global polynomial degree, or local degree for Savitzky–Golay detrending.</td>
 </tr>
 <tr>
 <td><code>min_valid_fraction</code></td>
 <td style="text-align: center;">no</td>
 <td><code>0.5</code></td>
-<td>Value used for <code>min valid fraction</code>.</td>
+<td>Minimum finite share required inside a running, median, or kernel window.</td>
 </tr>
 <tr>
 <td><code>bandwidth_hours</code></td>
 <td style="text-align: center;">no</td>
 <td><code>null</code></td>
-<td>Value used for <code>bandwidth hours</code>.</td>
+<td>Gaussian-kernel standard deviation in hours; omitted uses one quarter of the baseline window.</td>
 </tr>
 <tr>
 <td><code>low_cut_hours</code></td>
 <td style="text-align: center;">no</td>
 <td><code>45.0</code></td>
-<td>Value used for <code>low cut hours</code>.</td>
+<td>Longest period retained by frequency detrending, in hours.</td>
 </tr>
 <tr>
 <td><code>high_cut_hours</code></td>
 <td style="text-align: center;">no</td>
 <td><code>4.0</code></td>
-<td>Value used for <code>high cut hours</code>.</td>
+<td>Shortest period retained by frequency detrending, in hours.</td>
 </tr>
 <tr>
 <td><code>filter_order</code></td>
 <td style="text-align: center;">no</td>
 <td><code>2</code></td>
-<td>Value used for <code>filter order</code>.</td>
+<td>Butterworth order used in each direction by frequency detrending.</td>
+</tr>
+<tr>
+<td><code>lowess_fraction</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Fraction of finite samples used by each LOWESS local fit; omitted derives it from the baseline window.</td>
+</tr>
+<tr>
+<td><code>lowess_iterations</code></td>
+<td style="text-align: center;">no</td>
+<td><code>3</code></td>
+<td>LOWESS robust residual-reweighting passes after the initial fit; zero disables reweighting.</td>
+</tr>
+<tr>
+<td><code>asls_smoothness</code></td>
+<td style="text-align: center;">no</td>
+<td><code>1000000.0</code></td>
+<td>Positive asymmetric least-squares curvature penalty; larger gives a smoother baseline.</td>
+</tr>
+<tr>
+<td><code>asls_asymmetry</code></td>
+<td style="text-align: center;">no</td>
+<td><code>0.01</code></td>
+<td>Weight in (0, 0.5) for points above the asymmetric baseline; smaller excludes positive peaks more strongly.</td>
+</tr>
+<tr>
+<td><code>asls_iterations</code></td>
+<td style="text-align: center;">no</td>
+<td><code>10</code></td>
+<td>Asymmetric least-squares reweighting passes, from 1 to 100.</td>
 </tr>
 <tr>
 <td><code>smooth_window_hours</code></td>

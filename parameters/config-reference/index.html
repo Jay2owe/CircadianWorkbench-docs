@@ -239,6 +239,8 @@
       
         
       
+        
+      
     
     
     
@@ -308,6 +310,34 @@
     
   
     Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/detrending/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a detrending method
   
 
     
@@ -2693,7 +2723,7 @@
 
 
 <h1 id="complete-configuration-reference">Complete configuration reference<a class="headerlink" href="#complete-configuration-reference" title="Permanent link">&para;</a></h1>
-<p>All 184 live configuration keys are listed here with their normalized defaults and allowed values. This page is generated from <code>analysis.DEFAULT_CONFIG</code> through <code>describe_config</code>, so removed or undocumented keys fail the documentation checks.</p>
+<p>All 189 live configuration keys are listed here with their normalized defaults and allowed values. This page is generated from <code>analysis.DEFAULT_CONFIG</code> through <code>describe_config</code>, so removed or undocumented keys fail the documentation checks.</p>
 <p>A partial <code>config</code> or <code>settings</code> object may contain only the keys you change. Every result stores the complete normalized configuration in provenance.</p>
 <h2 id="selection-core-period-and-actogram">Selection, core period, and actogram<a class="headerlink" href="#selection-core-period-and-actogram" title="Permanent link">&para;</a></h2>
 <table>
@@ -2984,7 +3014,7 @@
 <td><code>period_detrend</code></td>
 <td>str</td>
 <td><code>"none"</code></td>
-<td><code>amp&amp;baseline</code>, <code>amp_baseline</code>, <code>baseline</code>, <code>bicubic</code>, <code>cubic</code>, <code>degree6</code>, <code>frequency</code>, <code>kernel</code>, <code>linear</code>, <code>none</code>, <code>poly3</code>, <code>poly6</code>, <code>polynomial</code>, <code>running_mean</code></td>
+<td><code>als</code>, <code>amp&amp;baseline</code>, <code>amp_baseline</code>, <code>asls</code>, <code>asymmetric-least-squares</code>, <code>asymmetric_least_squares</code>, <code>baseline</code>, <code>bicubic</code>, <code>cubic</code>, <code>degree6</code>, <code>diff</code>, <code>difference</code>, <code>first-difference</code>, <code>first_difference</code>, <code>frequency</code>, <code>huber</code>, <code>kernel</code>, <code>linear</code>, <code>loess</code>, <code>lowess</code>, <code>median</code>, <code>moving_average</code>, <code>moving_median</code>, <code>none</code>, <code>poly3</code>, <code>poly6</code>, <code>polynomial</code>, <code>robust</code>, <code>robust_linear</code>, <code>running_mean</code>, <code>running_median</code>, <code>savgol</code>, <code>savitzky-golay</code>, <code>savitzky_golay</code></td>
 <td>Baseline-removal method applied before extended period estimation.</td>
 </tr>
 <tr>
@@ -3035,6 +3065,41 @@
 <td><code>2</code></td>
 <td>—</td>
 <td>Digital-filter order used by frequency-filter detrending.</td>
+</tr>
+<tr>
+<td><code>period_detrend_lowess_fraction</code></td>
+<td>nullable</td>
+<td><code>null</code></td>
+<td>—</td>
+<td>Finite-record fraction used by each LOWESS local fit; null derives it from the detrending window.</td>
+</tr>
+<tr>
+<td><code>period_detrend_lowess_iterations</code></td>
+<td>int</td>
+<td><code>3</code></td>
+<td>—</td>
+<td>Robust residual-reweighting passes used by LOWESS detrending.</td>
+</tr>
+<tr>
+<td><code>period_detrend_asls_smoothness</code></td>
+<td>float</td>
+<td><code>1000000.0</code></td>
+<td>—</td>
+<td>Second-difference smoothness penalty used by asymmetric least-squares detrending.</td>
+</tr>
+<tr>
+<td><code>period_detrend_asls_asymmetry</code></td>
+<td>float</td>
+<td><code>0.01</code></td>
+<td>—</td>
+<td>Weight given to points above an asymmetric least-squares baseline.</td>
+</tr>
+<tr>
+<td><code>period_detrend_asls_iterations</code></td>
+<td>int</td>
+<td><code>10</code></td>
+<td>—</td>
+<td>Reweighting passes used by asymmetric least-squares detrending.</td>
 </tr>
 <tr>
 <td><code>nlls_max_components</code></td>

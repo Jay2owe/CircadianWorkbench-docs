@@ -239,6 +239,8 @@
       
         
       
+        
+      
     
     
     
@@ -308,6 +310,34 @@
     
   
     Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/detrending/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a detrending method
   
 
     
@@ -5078,7 +5108,7 @@
 <p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
 <h2 id="detrend"><code>detrend</code><a class="headerlink" href="#detrend" title="Permanent link">&para;</a></h2>
 <p>Baseline subtract, smooth, optionally exclude transients, and fit damping.</p>
-<pre><code class="language-python">cw.call(&quot;detrend&quot;, recording, config=None, detrend_method='running_mean', window_hours=24.0, polynomial_degree=3, min_valid_fraction=0.5, bandwidth_hours=None, low_cut_hours=45.0, high_cut_hours=4.0, filter_order=2, smooth_window_hours=0.0, exclude_hours=None)
+<pre><code class="language-python">cw.call(&quot;detrend&quot;, recording, config=None, detrend_method='running_mean', window_hours=24.0, polynomial_degree=3, min_valid_fraction=0.5, bandwidth_hours=None, low_cut_hours=45.0, high_cut_hours=4.0, filter_order=2, lowess_fraction=None, lowess_iterations=3, asls_smoothness=1000000.0, asls_asymmetry=0.01, asls_iterations=10, smooth_window_hours=0.0, exclude_hours=None)
 </code></pre>
 <table>
 <thead>
@@ -5114,7 +5144,7 @@
 <td style="text-align: center;">no</td>
 <td><code>"running_mean"</code></td>
 <td>-</td>
-<td>Baseline removal method: none, linear, running_mean, polynomial, cubic/bicubic, poly6, kernel/baseline, amp_baseline, or frequency.</td>
+<td>Baseline removal method: none, linear, robust_linear/Huber, first_difference, running_mean, moving_median, lowess/loess, savitzky_golay, polynomial (including cubic/bicubic and poly6), kernel/baseline, amp_baseline, asymmetric_least_squares/asls, or frequency.</td>
 </tr>
 <tr>
 <td><code>window_hours</code></td>
@@ -5171,6 +5201,46 @@
 <td><code>2</code></td>
 <td>-</td>
 <td>Butterworth frequency-filter order.</td>
+</tr>
+<tr>
+<td><code>lowess_fraction</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Fraction of finite samples in each LOWESS local fit; omitted derives it from window_hours.</td>
+</tr>
+<tr>
+<td><code>lowess_iterations</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>3</code></td>
+<td>passes</td>
+<td>LOWESS robust residual-reweighting passes after the initial local fit; 0 disables reweighting.</td>
+</tr>
+<tr>
+<td><code>asls_smoothness</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>1000000.0</code></td>
+<td>-</td>
+<td>Positive second-difference penalty for asymmetric least squares; larger is smoother.</td>
+</tr>
+<tr>
+<td><code>asls_asymmetry</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.01</code></td>
+<td>-</td>
+<td>Weight in (0, 0.5) for points above the asymmetric baseline; smaller excludes positive peaks more strongly.</td>
+</tr>
+<tr>
+<td><code>asls_iterations</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>10</code></td>
+<td>passes</td>
+<td>Asymmetric least-squares reweighting passes, from 1 to 100.</td>
 </tr>
 <tr>
 <td><code>smooth_window_hours</code></td>
