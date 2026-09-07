@@ -1,0 +1,61 @@
+.cw-gallery,
+.cw-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0 2rem;
+}
+
+.cw-gallery-card,
+.cw-analysis-card {
+  display: grid;
+  grid-template-rows: 11rem auto auto;
+  gap: 0.45rem;
+  overflow: hidden;
+  padding: 0.8rem;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  border-radius: 0.45rem;
+  background: var(--md-default-bg-color);
+  box-shadow: 0 0.15rem 0.5rem rgb(0 0 0 / 6%);
+  transition: border-color 120ms ease, transform 120ms ease;
+}
+
+.cw-gallery-card:hover,
+.cw-analysis-card:hover {
+  border-color: var(--md-accent-fg-color);
+  transform: translateY(-0.1rem);
+}
+
+.cw-gallery-card img,
+.cw-analysis-card img {
+  width: 100%;
+  height: 11rem;
+  object-fit: contain;
+  background: white;
+}
+
+.cw-gallery-card strong,
+.cw-analysis-card strong {
+  color: var(--md-primary-fg-color);
+  font-size: 1rem;
+}
+
+.cw-gallery-card span,
+.cw-analysis-card span {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.82rem;
+  line-height: 1.35;
+}
+
+article img[src$=".svg"] {
+  max-height: 34rem;
+}
+
+@media (max-width: 40rem) {
+  .cw-gallery,
+  .cw-analysis-grid {
+    grid-template-columns: 1fr;
+  }
+}

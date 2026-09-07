@@ -1,0 +1,3626 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Local, reproducible circadian activity analysis">
+      
+      
+      
+        <link rel="canonical" href="https://jay2owe.github.io/CircadianWorkbench-docs/analyses/circadian-workbench-analysis-explained/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../compare-period-estimates/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Analysis explained - Circadian Workbench</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#circadian-workbench-analysis-explained" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Circadian Workbench" class="md-header__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Circadian Workbench
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Analysis explained
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Circadian Workbench" class="md-nav__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Circadian Workbench
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/supported-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../api/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callers and automation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Callers and automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/python-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/action-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete action reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis explained
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-a-methods-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a methods section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-analysis-in-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The analysis in order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The analysis in order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-import-select-and-bin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Import, select, and bin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fold-the-activity-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Fold the activity profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-detect-daily-markers-and-estimate-onset-tau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Detect daily markers and estimate onset tau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-fit-the-fixed-period-cosinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Fit the fixed-period cosinor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-calculate-non-parametric-circadian-rhythm-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Calculate non-parametric circadian rhythm analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-estimate-and-compare-periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Estimate and compare periods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-rank-based-rhythmicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Test rank-based rhythmicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-track-instantaneous-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Track instantaneous phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-fit-a-phase-response-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Fit a phase-response curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-measure-phase-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Measure phase angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-measure-re-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11 — Measure re-entrainment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-measure-acute-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12 — Measure acute masking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-score-sleep-food-anticipation-and-ultradian-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13 — Score sleep, food anticipation, and ultradian activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-14-test-temperature-compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 14 — Test temperature compensation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-15-measure-population-phase-coherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 15 — Measure population phase coherence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-16-map-space-lag-locking-and-period-dispersion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 16 — Map space, lag, locking, and period dispersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-17-plan-prospective-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 17 — Plan prospective power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-18-predict-entrainment-re-entrainment-and-sleep-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 18 — Predict entrainment, re-entrainment, and sleep pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-each-step-can-mislead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where each step can mislead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analytic-phase-response-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytic phase-response curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-model-refusal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected model refusal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretation-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretation guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files and configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming and outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Period and rhythm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Period and rhythm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../compare-period-estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare period estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../rhythmicity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test rhythmicity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../splitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detect two circadian components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../instantaneous-phase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track phase and period
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entrainment and perturbation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-response-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit a phase-response curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../dose-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure a dose response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-angle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure phase angle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure acute masking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sleep and environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sleep and environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../immobility-sleep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score immobility sleep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../food-anticipation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure food anticipation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ultradian-rhythms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find ultradian rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../temperature-compensation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test temperature compensation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Within-recording population
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Within-recording population
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../channel-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare measurement channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../population-synchrony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure population synchrony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../phase-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map phase across space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure pairwise coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../period-dispersion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Separate phase and period dispersion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction and design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prediction and design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../sample-size/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan sample size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../entrainment-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict the entrainment range
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../predicted-reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-process-fit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit the two-process sleep model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../two-process-predict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict sleep pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../parameters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parameters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parameters/config-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete configuration reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../workflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/first-recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a first recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/period-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a period estimate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/entrainment-and-perturbation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/sleep-and-ultradian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score sleep and shorter rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/within-recording-population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a within-recording population
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/prediction-and-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run prediction and design calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/publication-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a publication figure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/project-replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replay a saved project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/backup-rehearsal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rehearse backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gallery/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/known-answer-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known-answer examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../troubleshooting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/inputs-and-fits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs and fits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/application-and-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application and exports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#for-a-methods-section" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        For a methods section
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-analysis-in-order" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The analysis in order
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="The analysis in order">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-1-import-select-and-bin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 1 — Import, select, and bin
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-2-fold-the-activity-profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 2 — Fold the activity profile
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-3-detect-daily-markers-and-estimate-onset-tau" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 3 — Detect daily markers and estimate onset tau
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-4-fit-the-fixed-period-cosinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 4 — Fit the fixed-period cosinor
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-5-calculate-non-parametric-circadian-rhythm-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 5 — Calculate non-parametric circadian rhythm analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-6-estimate-and-compare-periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 6 — Estimate and compare periods
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-7-test-rank-based-rhythmicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 7 — Test rank-based rhythmicity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-8-track-instantaneous-phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 8 — Track instantaneous phase
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-9-fit-a-phase-response-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 9 — Fit a phase-response curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-10-measure-phase-angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 10 — Measure phase angle
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-11-measure-re-entrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 11 — Measure re-entrainment
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-12-measure-acute-masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 12 — Measure acute masking
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-13-score-sleep-food-anticipation-and-ultradian-activity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 13 — Score sleep, food anticipation, and ultradian activity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-14-test-temperature-compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 14 — Test temperature compensation
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-15-measure-population-phase-coherence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 15 — Measure population phase coherence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-16-map-space-lag-locking-and-period-dispersion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 16 — Map space, lag, locking, and period dispersion
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-17-plan-prospective-power" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 17 — Plan prospective power
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#step-18-predict-entrainment-re-entrainment-and-sleep-pressure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Step 18 — Predict entrainment, re-entrainment, and sleep pressure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#where-each-step-can-mislead" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Where each step can mislead
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#worked-examples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Worked examples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Worked examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#analytic-phase-response-curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Analytic phase-response curve
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#temperature-identity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Temperature identity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#expected-model-refusal" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Expected model refusal
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interpretation-guide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Interpretation guide
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#symbols" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Symbols
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#technical-reference" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Technical reference
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Technical reference">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#files-and-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Files and configuration
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#naming-and-outputs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Naming and outputs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation-evidence" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Validation evidence
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#verification-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Verification commands
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="circadian-workbench-analysis-explained">Circadian Workbench analysis explained<a class="headerlink" href="#circadian-workbench-analysis-explained" title="Permanent link">&para;</a></h1>
+<h2 id="for-a-methods-section">For a methods section<a class="headerlink" href="#for-a-methods-section" title="Permanent link">&para;</a></h2>
+<p>Activity recordings were imported from ClockLab AWD or delimited timestamp/elapsed-time tables; timestamps were sorted and deduplicated, negative activity sentinels were treated as missing, and the positive median sampling interval was inferred when it was not declared. The selected channel was restricted to the inclusive analysis interval and inclusive exclusions, then count activity was summed into 15-minute bins while continuous channels were averaged. Unless changed in the saved normalized configuration, analyses used a 24-hour reference cycle, a period search from 18 to 30 hours, a 0.05-hour period step, Lomb–Scargle as the primary period estimator, and a folded 24-hour activity profile. Daily activity onset and offset used the 20th percentile of positive binned activity with six-hour inactive and active templates; accepted marker times were circularly unwrapped and regressed on day to estimate tau. A fixed-period cosinor estimated the midline estimating statistic of rhythm, amplitude, acrophase, coefficient of determination, F statistic, and p value; non-parametric analysis estimated L5, M10, relative amplitude, interdaily stability, and intradaily variability. Question-specific analyses used their declared recording, point, trace, stimulus, schedule, temperature, effect-size, or fitted-model inputs and the normalized settings stored with the result. Missing, under-covered, non-identifiable, or scientifically undefined quantities were withheld rather than replaced by zero. Result JSON and exports recorded the software version, source SHA-256 fingerprint, normalized settings, inputs, and generation time.</p>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Think of the workbench as a railway junction: import and selection create one checked track, then independent analyses branch from that same track and reunite only in the result and provenance record.</p>
+<pre><code class="language-text">file or declared points/traces/model
+        |
+        v
+validate input -&gt; normalize settings -&gt; select valid time/channel
+        |                                  |
+        |                                  +-&gt; daily markers and onset fits
+        |                                  +-&gt; profile and fixed cosinor
+        |                                  +-&gt; spectral period estimates
+        |                                  +-&gt; non-parametric rhythm measures
+        |                                  +-&gt; rhythmicity or Hilbert phase
+        |
+        +-&gt; direct-input science ---------&gt; derived analysis or prediction
+                                             |
+                                             v
+                              result + warnings + provenance + replay script
+</code></pre>
+<p>The branches are independent where the scientific question is independent. For example, temperature compensation consumes already estimated periods, while phase angle consumes daily markers and a dated zeitgeber schedule.</p>
+<p>The <a href="../../gallery/">plot gallery</a> is the visual companion to this execution map. These representative panels are produced by the same renderers used by the package's publication export:</p>
+<div class="cw-gallery">
+  <a class="cw-gallery-card" href="../compare-period-estimates/"><img src="../gallery/plots/compare-period-estimates/compare-period-estimates.svg" alt="Period estimator comparison"><strong>Compare period estimates</strong><span>See what unlike estimators can and cannot report.</span></a>
+  <a class="cw-gallery-card" href="../instantaneous-phase/"><img src="../gallery/plots/instantaneous-phase/instantaneous-phase.svg" alt="Instantaneous period through time"><strong>Track period drift</strong><span>See a time-local result instead of one global period.</span></a>
+  <a class="cw-gallery-card" href="../population-synchrony/"><img src="../gallery/plots/population-synchrony/population-synchrony.svg" alt="Population synchrony"><strong>Separate damping from desynchronisation</strong><span>See population coherence and amplitude together.</span></a>
+  <a class="cw-gallery-card" href="../phase-response-curve/"><img src="../gallery/plots/phase-response-curve/phase-response-curve.svg" alt="Phase-response curve"><strong>Fit a phase-response curve</strong><span>See animal points and the periodic fitted response.</span></a>
+</div>
+
+<h2 id="the-analysis-in-order">The analysis in order<a class="headerlink" href="#the-analysis-in-order" title="Permanent link">&para;</a></h2>
+<h3 id="step-1-import-select-and-bin">Step 1 — Import, select, and bin<a class="headerlink" href="#step-1-import-select-and-bin" title="Permanent link">&para;</a></h3>
+<p>ClockLab declares its interval in the header; timestamped and elapsed tables use the median positive time difference. The source is sorted and duplicate timestamps keep the final row. Missing activity stays missing. Selection and exclusions are inclusive. For a bin (j), counts are summed and continuous levels are averaged over the (n_j) observed samples.</p>
+<pre><code class="language-text">(1) count_bin[j] = SUM(x[i]); level_bin[j] = SUM(x[i]) / n[j]
+</code></pre>
+<p>$$
+\tag{1} C_j=\sum_{i\in j}x_i,\qquad L_j=\frac{1}{n_j}\sum_{i\in j}x_i
+$$</p>
+<p>Engine: <code>io.py</code> importers and <code>analysis.py:1147-1299</code> selection/resampling.</p>
+<h3 id="step-2-fold-the-activity-profile">Step 2 — Fold the activity profile<a class="headerlink" href="#step-2-fold-the-activity-profile" title="Permanent link">&para;</a></h3>
+<p>Each selected bin is assigned a phase modulo reference period (P). Mean, sample standard deviation, observation count, and standard error are calculated separately at every phase bin.</p>
+<pre><code class="language-text">(2) phase[i] = time[i] MOD P; SEM[j] = SD[j] / SQRT(n[j])
+</code></pre>
+<p>$$
+\tag{2} \phi_i=t_i\bmod P,\qquad SEM_j=\frac{SD_j}{\sqrt{n_j}}
+$$</p>
+<p>Engine: <code>analysis.py:1719-1780</code>.</p>
+<h3 id="step-3-detect-daily-markers-and-estimate-onset-tau">Step 3 — Detect daily markers and estimate onset tau<a class="headerlink" href="#step-3-detect-daily-markers-and-estimate-onset-tau" title="Permanent link">&para;</a></h3>
+<p>The onset template rewards activity after a candidate and inactivity before it. A flat score curve is withheld. Accepted circular marker times are unwrapped and fitted against day (d); one hour of daily drift changes tau by one hour.</p>
+<pre><code class="language-text">(3) score(c) = (SUM(after_active) - SUM(before_inactive)) / (n_on + n_off); onset[d] = a + b*d; tau = 24 + b
+</code></pre>
+<p>$$
+\tag{3} S(c)=\frac{\sum x_{after}-\sum x_{before}}{n_{on}+n_{off}},\qquad u_d=a+bd,\qquad \tau=24+b
+$$</p>
+<p>Engine: <code>analysis.py:1453-1716</code>.</p>
+<h3 id="step-4-fit-the-fixed-period-cosinor">Step 4 — Fit the fixed-period cosinor<a class="headerlink" href="#step-4-fit-the-fixed-period-cosinor" title="Permanent link">&para;</a></h3>
+<p>Ordinary least squares fits an intercept and sine/cosine pair at angular frequency ω. Amplitude is vector length and acrophase is its circular direction. The model-versus-residual variance ratio gives the F statistic.</p>
+<pre><code class="language-text">(4) y = M + beta*COS(omega*t) + gamma*SIN(omega*t); A = SQRT(beta^2 + gamma^2); phase = ATAN2(gamma,beta)/omega MOD P
+</code></pre>
+<p>$$
+\tag{4} y_i=M+\beta\cos(\omega t_i)+\gamma\sin(\omega t_i),\quad A=\sqrt{\beta^2+\gamma^2},\quad \phi=\frac{\operatorname{atan2}(\gamma,\beta)}{\omega}\bmod P
+$$</p>
+<p>Engine: <code>analysis.py:1980-2011</code>. The source contains no scholarly citation for this implementation.</p>
+<h3 id="step-5-calculate-non-parametric-circadian-rhythm-analysis">Step 5 — Calculate non-parametric circadian rhythm analysis<a class="headerlink" href="#step-5-calculate-non-parametric-circadian-rhythm-analysis" title="Permanent link">&para;</a></h3>
+<p>Intradaily variability (IV) uses successive differences, interdaily stability (IS) compares hourly means with total variance, and relative amplitude (RA) contrasts the lowest five-hour and highest ten-hour circular windows.</p>
+<pre><code class="language-text">(5) IV = N*SUM((x[i]-x[i-1])^2)/(A*SUM((x[i]-mean)^2)); IS = N*SUM((hour_mean[h]-mean)^2)/(24*SUM((x[i]-mean)^2)); RA = (M10-L5)/(M10+L5)
+</code></pre>
+<p>$$
+\tag{5} IV=\frac{N\sum(x_i-x_{i-1})^2}{A\sum(x_i-\bar x)^2},\quad IS=\frac{N\sum_{h=0}^{23}(\bar x_h-\bar x)^2}{24\sum(x_i-\bar x)^2},\quad RA=\frac{M10-L5}{M10+L5}
+$$</p>
+<p>Engine: <code>analysis.py:2496-2551</code>. The source contains no scholarly citation for this implementation.</p>
+<h3 id="step-6-estimate-and-compare-periods">Step 6 — Estimate and compare periods<a class="headerlink" href="#step-6-estimate-and-compare-periods" title="Permanent link">&para;</a></h3>
+<p>Every estimator searches the same declared period range after its stated detrending and resampling. The reported candidate maximizes that estimator's score; comparison preserves failures rather than substituting the primary method.</p>
+<pre><code class="language-text">(6) period_hat[m] = ARGMAX over P in search_grid of score[m](P)
+</code></pre>
+<p>$$
+\tag{6} \widehat P_m=\underset{P\in\mathcal P}{\operatorname{argmax}}\;Q_m(P)
+$$</p>
+<p>Engine: <code>analysis.py:2014-2298</code>, <code>period_methods.py:394-1983</code>. Implemented estimators include Lomb–Scargle, Sokolove–Bushell chi-square, Dörrscheidt–Beck F, FFT-NLLS, Burg maximum entropy, mFourFit, and spectrum resampling.</p>
+<h3 id="step-7-test-rank-based-rhythmicity">Step 7 — Test rank-based rhythmicity<a class="headerlink" href="#step-7-test-rank-based-rhythmicity" title="Permanent link">&para;</a></h3>
+<p>JTK_CYCLE compares observed and template orderings with Kendall tau-b. Empirical JTK_CYCLE permutes the observed ordering; the plus-one correction prevents a zero p value.</p>
+<pre><code class="language-text">(7) tau_b = (concordant-discordant)/SQRT((pairs-ties_x)*(pairs-ties_y)); p_emp = (1 + COUNT(abs(tau_null)&gt;=abs(tau_obs))) / (1 + permutations)
+</code></pre>
+<p>$$
+\tag{7} \tau_b=\frac{C-D}{\sqrt{(N_p-T_x)(N_p-T_y)}},\qquad p_{emp}=\frac{1+#(|\tau_0|\ge|\tau_{obs}|)}{1+N_{perm}}
+$$</p>
+<p>Engine: <code>rhythm_detection.py:54-532</code>. Dense data are reduced to at most 96 points by default.</p>
+<h3 id="step-8-track-instantaneous-phase">Step 8 — Track instantaneous phase<a class="headerlink" href="#step-8-track-instantaneous-phase" title="Permanent link">&para;</a></h3>
+<p>A zero-phase band-pass filter isolates the configured circadian band. The Hilbert transform forms analytic signal (z(t)); unwrapped phase slope gives local period and magnitude gives local amplitude. Edge cycles are discarded.</p>
+<pre><code class="language-text">(8) z(t) = filtered_x(t) + i*HILBERT(filtered_x(t)); period(t) = 2*pi / DERIVATIVE(unwrapped_phase(t)); amplitude(t) = ABS(z(t))
+</code></pre>
+<p>$$
+\tag{8} z(t)=x_f(t)+i\mathcal H[x_f(t)],\qquad P(t)=\frac{2\pi}{d\theta(t)/dt},\qquad A(t)=|z(t)|
+$$</p>
+<p>Engine: <code>instantaneous.py:134-532</code>. This project-specific interpretation guard has no citation in source.</p>
+<h3 id="step-9-fit-a-phase-response-curve">Step 9 — Fit a phase-response curve<a class="headerlink" href="#step-9-fit-a-phase-response-curve" title="Permanent link">&para;</a></h3>
+<p>Pre-scored shifts or record-derived onset shifts are placed on circadian time. One or two periodic harmonics are fitted by least squares. Advance is positive; insufficient valid points returns no fit.</p>
+<pre><code class="language-text">(9) CT = (CT_onset + (stimulus-projected_onset)*24/tau) MOD 24; shift(CT) = a0 + SUM(a[k]*COS(2*pi*k*CT/24) + b[k]*SIN(2*pi*k*CT/24))
+</code></pre>
+<p>$$
+\tag{9} CT=\left[CT_{on}+\frac{24(t_s-\widehat t_{on})}{\tau}\right]_{24},\qquad \Delta(CT)=a_0+\sum_k\left[a_k\cos\frac{2\pi kCT}{24}+b_k\sin\frac{2\pi kCT}{24}\right]
+$$</p>
+<p>Engine: <code>phase_response.py:65-468</code>, orchestrated by <code>actions.py:1951-2000</code>. The source names the Aschoff sign convention and Winfree curve definition without a full citation.</p>
+<h3 id="step-10-measure-phase-angle">Step 10 — Measure phase angle<a class="headerlink" href="#step-10-measure-phase-angle" title="Permanent link">&para;</a></h3>
+<p>Each daily marker is differenced from the selected zeitgeber transition and wrapped to ±12 hours. Unit vectors give circular mean and resultant length (R); Rayleigh concentration plus absence of material drift supports the entrainment verdict.</p>
+<pre><code class="language-text">(10) psi[i] = WRAP24(marker[i]-zeitgeber[i]); R = ABS(SUM(EXP(i*2*pi*psi[i]/24))/n); circular_SD = SQRT(-2*LN(R))*24/(2*pi)
+</code></pre>
+<p>$$
+\tag{10} \Psi_i=[m_i-z_i]_{24},\qquad R=\left|\frac1n\sum_i e^{i2\pi\Psi_i/24}\right|,\qquad SD_c=\sqrt{-2\ln R}\frac{24}{2\pi}
+$$</p>
+<p>Engine: <code>entrainment.py:99-409</code>, using <code>circular.py:86-173</code>.</p>
+<h3 id="step-11-measure-re-entrainment">Step 11 — Measure re-entrainment<a class="headerlink" href="#step-11-measure-re-entrainment" title="Permanent link">&para;</a></h3>
+<p>Tolerance is the larger of a multiple of baseline circular spread and one analysis bin. The first sustained run inside tolerance is reported only if the final day remains settled. When supported, an exponential describes approach.</p>
+<pre><code class="language-text">(11) tolerance = MAX(k*baseline_SD, bin_minutes/60); deviation(day) = A*EXP(-day/tau_days); half_life = tau_days*LN(2)
+</code></pre>
+<p>$$
+\tag{11} \epsilon=\max(kSD_{base},B/60),\qquad d(t)=Ae^{-t/\tau_r},\qquad t_{1/2}=\tau_r\ln2
+$$</p>
+<p>Engine: <code>entrainment.py:411-703</code>. The exponential decision rule is original to this project; no citation is present in source.</p>
+<h3 id="step-12-measure-acute-masking">Step 12 — Measure acute masking<a class="headerlink" href="#step-12-measure-acute-masking" title="Permanent link">&para;</a></h3>
+<p>Activity during the pulse is compared with the same clock window on prior control days. The prediction-interval denominator treats the pulse as a new observation, not another member of the control mean.</p>
+<pre><code class="language-text">(12) t = (pulse-control_mean)/(control_SD*SQRT(1+1/n_control)); difference = pulse-control_mean
+</code></pre>
+<p>$$
+\tag{12} t=\frac{x_p-\bar x_c}{s_c\sqrt{1+1/n_c}},\qquad \Delta x=x_p-\bar x_c
+$$</p>
+<p>Engine: <code>entrainment.py:705-900</code>. This test choice is original to this project; no citation is present in source.</p>
+<h3 id="step-13-score-sleep-food-anticipation-and-ultradian-activity">Step 13 — Score sleep, food anticipation, and ultradian activity<a class="headerlink" href="#step-13-score-sleep-food-anticipation-and-ultradian-activity" title="Permanent link">&para;</a></h3>
+<p>Sustained immobility uses a run-length threshold. Food anticipation contrasts declared pre- and post-meal windows. Ultradian estimation subtracts a fitted slow component before searching the faster band and checks simple harmonics.</p>
+<pre><code class="language-text">(13) min_samples = CEIL(immobility_minutes/sample_interval_minutes); FAA_index = premeal/(premeal+postmeal); ultradian_resolution = fast_period^2/record_span
+</code></pre>
+<p>$$
+\tag{13} n_{min}=\left\lceil\frac{T_{immobile}}{\Delta t}\right\rceil,\qquad I_{FAA}=\frac{x_{pre}}{x_{pre}+x_{post}},\qquad \delta P=\frac{P_f^2}{T_{span}}
+$$</p>
+<p>Engine: <code>sleep.py:66-289</code>, <code>feeding.py:42-356</code>, and <code>ultradian.py:73-285</code>. Pack et al. (2007) is cited for the video-immobility convention; food and ultradian decision rules have no citation in source.</p>
+<h3 id="step-14-test-temperature-compensation">Step 14 — Test temperature compensation<a class="headerlink" href="#step-14-test-temperature-compensation" title="Permanent link">&para;</a></h3>
+<p>Rate is the reciprocal of period. With at least three temperatures, the log-rate slope gives Q10; repeated unit labels are retained for clustered uncertainty.</p>
+<pre><code class="language-text">(14) rate = 1/period; LN(rate) = a + b*temperature; Q10 = EXP(10*b)
+</code></pre>
+<p>$$
+\tag{14} r_i=P_i^{-1},\qquad \ln r_i=a+bT_i+\epsilon_i,\qquad Q_{10}=e^{10b}
+$$</p>
+<p>Engine: <code>compensation.py:50-292</code>. The 0.8–1.2 acceptance band is a configurable convention and has no citation in source.</p>
+<h3 id="step-15-measure-population-phase-coherence">Step 15 — Measure population phase coherence<a class="headerlink" href="#step-15-measure-population-phase-coherence" title="Permanent link">&para;</a></h3>
+<p>Each component trace supplies an analytic phase. The Kuramoto order parameter averages unit phase vectors; ensemble amplitude is decomposed into mean component amplitude and phase coherence.</p>
+<pre><code class="language-text">(15) R(t) = ABS(SUM(EXP(i*phase[cell,t]))/N); ensemble_amplitude(t) ~= mean_cell_amplitude(t)*R(t)
+</code></pre>
+<p>$$
+\tag{15} R(t)=\left|\frac1N\sum_j e^{i\theta_j(t)}\right|,\qquad A_{ens}(t)\approx\overline{A_j(t)}R(t)
+$$</p>
+<p>Engine: <code>synchrony.py:1-745</code>. The damping decomposition follows Yoo et al. (2004).</p>
+<h3 id="step-16-map-space-lag-locking-and-period-dispersion">Step 16 — Map space, lag, locking, and period dispersion<a class="headerlink" href="#step-16-map-space-lag-locking-and-period-dispersion" title="Permanent link">&para;</a></h3>
+<p>Spatial phase fits the plane that maximizes residual circular concentration. Pairwise lag and phase-locking value (PLV) use circular phase difference. Period dispersion winds starting phases forward at each component's period to predict loss of coherence.</p>
+<pre><code class="language-text">(16) spatial_Q(b,c) = ABS(MEAN(EXP(i*(phase-b*x-c*y)))); lag = P*ARG(MEAN(EXP(i*(phase_B-phase_A))))/(2*pi); predicted_phase[i,t] = phase0[i] + 2*pi*t/tau[i]
+</code></pre>
+<p>$$
+\tag{16} Q(b,c)=\left|\frac1N\sum_j e^{i(\theta_j-bx_j-cy_j)}\right|,\quad \ell=\frac{P}{2\pi}\arg\overline{e^{i(\theta_B-\theta_A)}},\quad \theta_i^{pred}(t)=\theta_{i0}+\frac{2\pi t}{\tau_i}
+$$</p>
+<p>Engine: <code>spatial.py:1-479</code>, <code>coupling.py:118-578</code>, and <code>synchrony.py:749-1195</code>. Whole cycles or component traces, not timepoints, form the uncertainty units.</p>
+<h3 id="step-17-plan-prospective-power">Step 17 — Plan prospective power<a class="headerlink" href="#step-17-plan-prospective-power" title="Permanent link">&para;</a></h3>
+<p>The simulator repeatedly generates data under the declared smallest meaningful effect and runs the real target test. The first recommended size is based on the Wilson lower confidence bound, not the noisier point estimate.</p>
+<pre><code class="language-text">(17) power_hat = rejections/simulations; wilson_centre = (power_hat + z^2/(2*S))/(1+z^2/S)
+</code></pre>
+<p>$$
+\tag{17} \widehat\pi=R/S,\qquad c_W=\frac{\widehat\pi+z^2/(2S)}{1+z^2/S}
+$$</p>
+<p>Engine: <code>power.py:1-605</code>. Post-hoc observed power is refused following Hoenig and Heisey (2001).</p>
+<h3 id="step-18-predict-entrainment-re-entrainment-and-sleep-pressure">Step 18 — Predict entrainment, re-entrainment, and sleep pressure<a class="headerlink" href="#step-18-predict-entrainment-re-entrainment-and-sleep-pressure" title="Permanent link">&para;</a></h3>
+<p>Phase-response predictions iterate a once-per-cycle phase map; a fixed point is stable only when its response-curve derivative lies between -2 and 0. The two-process model evolves homeostatic pressure with separate wake and sleep time constants and a sinusoidal circadian threshold.</p>
+<pre><code class="language-text">(18) phase[n+1] = (phase[n] + 24*T/tau + shift(phase[n])) MOD 24; S_wake_next = 1-(1-S)*EXP(-dt/tau_rise); S_sleep_next = S*EXP(-dt/tau_fall)
+</code></pre>
+<p>$$
+\tag{18} \phi_{n+1}=\left[\phi_n+\frac{24T}{\tau}+\Delta(\phi_n)\right]<em rise="rise">{24},\quad S_w(t+\Delta t)=1-[1-S(t)]e^{-\Delta t/\tau</em>
+$$}},\quad S_s(t+\Delta t)=S(t)e^{-\Delta t/\tau_{fall}</p>
+<p>Engine: <code>prediction.py:1-658</code> and <code>two_process.py:1-987</code>. The phase-map implementation and two-process fitting choices have no complete citation in source and are labelled original to this project where they extend the named models.</p>
+<h2 id="where-each-step-can-mislead">Where each step can mislead<a class="headerlink" href="#where-each-step-can-mislead" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Import cannot infer the scientific meaning of an unfamiliar numeric column; inspect retained labels and units.</li>
+<li>A folded profile hides drift and transients; use instantaneous phase when stationarity is doubtful.</li>
+<li>A period at a search boundary, or at half/twice another estimate, can be a range artefact or harmonic.</li>
+<li>Low analytic amplitude makes Hilbert phase unstable even when an array can be drawn.</li>
+<li>Calendar analyses are withheld for elapsed-hours files because their dates were synthesized.</li>
+<li>Phase-response zones outside observed phase coverage are extrapolations.</li>
+<li>Masking is immediate activity change, not clock resetting.</li>
+<li>Immobility is not electroencephalographic sleep.</li>
+<li>Correlation, phase locking, and spatial gradients do not prove causal coupling.</li>
+<li>Simulation and prediction inherit every assumption of the fitted input; they are not measurements.</li>
+<li><code>null</code> means withheld or unidentified, never zero and never evidence of no effect.</li>
+</ul>
+<h2 id="worked-examples">Worked examples<a class="headerlink" href="#worked-examples" title="Permanent link">&para;</a></h2>
+<h3 id="analytic-phase-response-curve">Analytic phase-response curve<a class="headerlink" href="#analytic-phase-response-curve" title="Permanent link">&para;</a></h3>
+<p>Eight points sampled from <code>-cos(2πCT/24)</code> every three circadian hours recover coefficients <code>[0, -1, 0]</code>, R² 1, and extrema ±1 hour under the one-harmonic model. The case is committed as <code>validation/cases/phase-response-sinusoid.json</code>.</p>
+<h3 id="temperature-identity">Temperature identity<a class="headerlink" href="#temperature-identity" title="Permanent link">&para;</a></h3>
+<p>Periods of 24 hours at 20, 25, and 30 °C have zero log-rate slope and Q10 1. A confidence interval is correctly withheld because one unit per temperature contains no within-temperature spread.</p>
+<h3 id="expected-model-refusal">Expected model refusal<a class="headerlink" href="#expected-model-refusal" title="Permanent link">&para;</a></h3>
+<p>A two-process prediction supplied with an empty fit returns <code>input_error</code>. The absence of parameters is not silently replaced by defaults.</p>
+<h2 id="interpretation-guide">Interpretation guide<a class="headerlink" href="#interpretation-guide" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Result state</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Value with diagnostics</td>
+<td>The declared calculation was identified on the supplied input.</td>
+</tr>
+<tr>
+<td>Warning</td>
+<td>A value exists but a named assumption, coverage, or interpretation boundary needs review.</td>
+</tr>
+<tr>
+<td><code>null</code> field</td>
+<td>The quantity was not identified or was deliberately withheld.</td>
+</tr>
+<tr>
+<td>Input refusal</td>
+<td>The requested number has no defined meaning for those inputs.</td>
+</tr>
+<tr>
+<td>Independent <code>PASS</code></td>
+<td>A predeclared committed reference agreed within its predeclared tolerance.</td>
+</tr>
+<tr>
+<td>Not externally validated</td>
+<td>Implementation tests pass, but no independent distributable result supports an external agreement claim.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="symbols">Symbols<a class="headerlink" href="#symbols" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Definition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>(x_i)</td>
+<td>observed activity or measurement at sample (i)</td>
+</tr>
+<tr>
+<td>(t_i)</td>
+<td>elapsed time of sample (i)</td>
+</tr>
+<tr>
+<td>(B)</td>
+<td>analysis-bin width in minutes</td>
+</tr>
+<tr>
+<td>(P), τ</td>
+<td>reference or free-running period in hours</td>
+</tr>
+<tr>
+<td>(M)</td>
+<td>cosinor midline estimating statistic of rhythm</td>
+</tr>
+<tr>
+<td>(A)</td>
+<td>amplitude; in Equation 5 only, finite adjacent-pair count</td>
+</tr>
+<tr>
+<td>φ, θ</td>
+<td>circular phase in hours or radians as stated</td>
+</tr>
+<tr>
+<td>Ψ</td>
+<td>signed marker-to-zeitgeber phase angle</td>
+</tr>
+<tr>
+<td>(R)</td>
+<td>circular resultant length or rejection count where explicitly subscripted</td>
+</tr>
+<tr>
+<td>(S)</td>
+<td>template score, homeostatic pressure, or simulation count as locally labelled</td>
+</tr>
+<tr>
+<td>(Q_{10})</td>
+<td>rate change for a 10 °C increase</td>
+</tr>
+<tr>
+<td>PLV</td>
+<td>phase-locking value, the resultant length of pairwise phase differences</td>
+</tr>
+</tbody>
+</table>
+<h2 id="technical-reference">Technical reference<a class="headerlink" href="#technical-reference" title="Permanent link">&para;</a></h2>
+<h3 id="files-and-configuration">Files and configuration<a class="headerlink" href="#files-and-configuration" title="Permanent link">&para;</a></h3>
+<p>The registry and parameter contract are in <code>actions.py</code>; shared defaults and normalization are in <code>analysis.py</code>; import is in <code>io.py</code>. Each specialised analysis lives in its named scientific module. Numerical modules do not import FastAPI or browser code. The browser catalogue is a reviewed allow-list in <code>ui_catalogue.py</code>.</p>
+<p>Normalized settings clamp declared numeric ranges and fill defaults before calculation. Every browser run uses the active recording and the same current normalized configuration as the core dashboard. Direct point/model actions skip recording import but still record their inputs and version.</p>
+<h3 id="naming-and-outputs">Naming and outputs<a class="headerlink" href="#naming-and-outputs" title="Permanent link">&para;</a></h3>
+<p>Action results are JSON-clean dictionaries. Recording results include source name and fingerprint; workbench downloads wrap action, title, inputs, configuration, result, version, and generation time. Publication bundles preserve exact plotted data and source SVGs. Projects preserve replay state but not source bytes.</p>
+<h3 id="validation-evidence">Validation evidence<a class="headerlink" href="#validation-evidence" title="Permanent link">&para;</a></h3>
+<p>The manifest-driven runner dispatches the real registry action. Current independent hand-calculated passes cover a timestamped import, an analytic phase-response curve, and the constant-period Q10 identity. All other user-facing methods are explicitly not externally validated in the distributable evidence matrix, even when their unit and known-answer tests pass.</p>
+<h3 id="verification-commands">Verification commands<a class="headerlink" href="#verification-commands" title="Permanent link">&para;</a></h3>
+<pre><code class="language-powershell">python scripts/run_validation.py --all
+python scripts/check_docs.py
+python -m pytest tests/test_validation_cases.py tests/test_analysis_explanation.py
+mkdocs build --strict
+</code></pre>
+<h2 id="references">References<a class="headerlink" href="#references" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Barrodale I, Erickson RE. Algorithms for least-squares linear prediction and maximum entropy spectral analysis. 1980. Citation as recorded in source.</li>
+<li>Burg JP. Maximum entropy spectral analysis. 1967. Citation as recorded in source.</li>
+<li>Costa MJ et al. Spectrum resampling for period estimation. <em>Biostatistics</em>. 2013. Citation as recorded in source.</li>
+<li>Dörrscheidt GJ, Beck L. F-periodogram method. 1975. Citation as recorded in source.</li>
+<li>Edwards KD et al. Quantitative analysis of regulatory flexibility under changing environmental conditions. <em>Molecular Systems Biology</em>. 2010;6:424.</li>
+<li>Enright JT. The search for rhythmicity in biological time-series. 1965. Citation as recorded in source.</li>
+<li>Fisher NI. <em>Statistical Analysis of Circular Data</em>. 1993.</li>
+<li>Hoenig JM, Heisey DM. The abuse of power: the pervasive fallacy of power calculations for data analysis. <em>The American Statistician</em>. 2001.</li>
+<li>Hughes ME, Hogenesch JB, Kornacker K. JTK_CYCLE: an efficient nonparametric algorithm for detecting rhythmic components. <em>Journal of Biological Rhythms</em>. 2010;25:372.</li>
+<li>Hutchison AL et al. Improved statistical methods enable greater sensitivity in rhythm detection for genome-wide data. <em>PLoS Computational Biology</em>. 2015;11:e1004094.</li>
+<li>Lomb NR. Least-squares frequency analysis of unequally spaced data. <em>Astrophysics and Space Science</em>. 1976.</li>
+<li>Pack AI et al. Novel method for high-throughput phenotyping of sleep in mice. <em>Physiological Genomics</em>. 2007.</li>
+<li>Plautz JD et al. Quantitative analysis of Drosophila period gene transcription in living animals. <em>Journal of Biological Rhythms</em>. 1997;12:204.</li>
+<li>Scargle JD. Studies in astronomical time series II: statistical aspects of spectral analysis of unevenly spaced data. <em>The Astrophysical Journal</em>. 1982.</li>
+<li>Sokolove PG, Bushell WN. The chi-square periodogram: its utility for analysis of circadian rhythms. <em>Journal of Theoretical Biology</em>. 1978.</li>
+<li>Ulrych TJ, Bishop TN. Maximum entropy spectral analysis and autoregressive decomposition. 1975. Citation as recorded in source.</li>
+<li>Yoo SH et al. PERIOD2::LUCIFERASE real-time reporting of circadian dynamics reveals persistent circadian oscillations in mouse peripheral tissues. <em>Proceedings of the National Academy of Sciences</em>. 2004;101:5339.</li>
+<li>Zar JH. <em>Biostatistical Analysis</em>. 4th ed. 1999.</li>
+<li>Zielinski T et al. Strengths and limitations of period estimation methods for circadian data. <em>PLoS ONE</em>. 2014;9:e96462.</li>
+</ul>
+<p>Where the engine names an algorithm without bibliographic detail, the relevant step above says that the citation is absent rather than inventing one.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

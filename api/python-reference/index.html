@@ -1,0 +1,3238 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Local, reproducible circadian activity analysis">
+      
+      
+      
+        <link rel="canonical" href="https://jay2owe.github.io/CircadianWorkbench-docs/api/python-reference/">
+      
+      
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../action-reference/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Python interface - Circadian Workbench</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#python-interface-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Circadian Workbench" class="md-header__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Circadian Workbench
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Python interface
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Circadian Workbench" class="md-nav__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Circadian Workbench
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/supported-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callers and automation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Callers and automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python interface
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#return-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return object
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../action-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete action reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../analyses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/circadian-workbench-analysis-explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Period and rhythm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Period and rhythm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/compare-period-estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare period estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/rhythmicity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test rhythmicity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/splitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detect two circadian components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/instantaneous-phase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track phase and period
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entrainment and perturbation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-response-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit a phase-response curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/dose-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure a dose response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-angle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure phase angle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure acute masking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sleep and environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sleep and environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/immobility-sleep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score immobility sleep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/food-anticipation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure food anticipation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/ultradian-rhythms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find ultradian rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/temperature-compensation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test temperature compensation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Within-recording population
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Within-recording population
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/channel-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare measurement channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/population-synchrony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure population synchrony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map phase across space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure pairwise coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/period-dispersion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Separate phase and period dispersion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction and design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prediction and design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/sample-size/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan sample size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/entrainment-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict the entrainment range
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/predicted-reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/two-process-fit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit the two-process sleep model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/two-process-predict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict sleep pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../parameters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parameters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parameters/config-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete configuration reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../workflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/first-recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a first recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/period-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a period estimate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/entrainment-and-perturbation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/sleep-and-ultradian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score sleep and shorter rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/within-recording-population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a within-recording population
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/prediction-and-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run prediction and design calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/publication-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a publication figure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/project-replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replay a saved project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/backup-rehearsal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rehearse backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gallery/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/known-answer-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known-answer examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../troubleshooting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/inputs-and-fits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs and fits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/application-and-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application and exports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#return-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Return object
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="python-interface-reference">Python interface reference<a class="headerlink" href="#python-interface-reference" title="Permanent link">&para;</a></h1>
+<p>The friendly interface binds data once and exposes question-shaped methods. Every method ultimately calls the same registered scientific action documented in the <a href="../action-reference/">complete action reference</a>.</p>
+<h2 id="return-object">Return object<a class="headerlink" href="#return-object" title="Permanent link">&para;</a></h2>
+<p>Every calculation returns <code>Result(action, data, answer, warnings, files, provenance, script, raw)</code>. <code>data</code> is the numerical payload; <code>script</code> is executable replay code; <code>raw</code> retains the complete backend envelope.</p>
+<h1 id="constructors-and-dispatch">Constructors and dispatch<a class="headerlink" href="#constructors-and-dispatch" title="Permanent link">&para;</a></h1>
+<h2 id="cwopensource-any-settings-mappingstr-any-none-none-recordingcaller"><code>cw.open(source: 'Any', *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'RecordingCaller'</code><a class="headerlink" href="#cwopensource-any-settings-mappingstr-any-none-none-recordingcaller" title="Permanent link">&para;</a></h2>
+<p>Bind friendly calls to a file path, recording spec or Recording.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>source</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>File path, recording specification, or in-memory recording to bind.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwtracehours-sequencefloat-values-sequencefloat-name-str-trace-value_label-str-activity-value_unit-str-settings-mappingstr-any-none-none-tracecaller"><code>cw.trace(hours: 'Sequence[float]', values: 'Sequence[float]', *, name: 'str' = 'trace', value_label: 'str' = 'Activity', value_unit: 'str' = '', settings: 'Mapping[str, Any] | None' = None) -&gt; 'TraceCaller'</code><a class="headerlink" href="#cwtracehours-sequencefloat-values-sequencefloat-name-str-trace-value_label-str-activity-value_unit-str-settings-mappingstr-any-none-none-tracecaller" title="Permanent link">&para;</a></h2>
+<p>Bind friendly calls to one elapsed-time numeric trace.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hours</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Shared elapsed-time coordinates in hours.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Numeric observations; a mapping supplies one array per channel.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"trace"</code></td>
+<td>Human-readable recording or trace label retained in results.</td>
+</tr>
+<tr>
+<td><code>value_label</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"Activity"</code></td>
+<td>Axis label describing the measured quantity.</td>
+</tr>
+<tr>
+<td><code>value_unit</code></td>
+<td style="text-align: center;">no</td>
+<td><code>""</code></td>
+<td>Unit printed beside the measured quantity.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwpopulationhours-sequencefloat-traces-mappingstr-sequencefloat-settings-mappingstr-any-none-none-populationcaller"><code>cw.population(hours: 'Sequence[float]', traces: 'Mapping[str, Sequence[float]]', *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'PopulationCaller'</code><a class="headerlink" href="#cwpopulationhours-sequencefloat-traces-mappingstr-sequencefloat-settings-mappingstr-any-none-none-populationcaller" title="Permanent link">&para;</a></h2>
+<p>Bind population analyses to labelled traces on a shared time grid.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hours</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Shared elapsed-time coordinates in hours.</td>
+</tr>
+<tr>
+<td><code>traces</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Mapping from trace label to values on the shared <code>hours</code> grid.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwchannelshours-sequencefloat-values-mappingstr-sequencefloat-name-str-recording-settings-mappingstr-any-none-none-channelcaller"><code>cw.channels(hours: 'Sequence[float]', values: 'Mapping[str, Sequence[float]]', *, name: 'str' = 'recording', settings: 'Mapping[str, Any] | None' = None) -&gt; 'ChannelCaller'</code><a class="headerlink" href="#cwchannelshours-sequencefloat-values-mappingstr-sequencefloat-name-str-recording-settings-mappingstr-any-none-none-channelcaller" title="Permanent link">&para;</a></h2>
+<p>Bind analyses to several measurements from one subject.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hours</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Shared elapsed-time coordinates in hours.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Numeric observations; a mapping supplies one array per channel.</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"recording"</code></td>
+<td>Human-readable recording or trace label retained in results.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwphasesvalues-any-period_hours-float-240-settings-mappingstr-any-none-none-phasecaller"><code>cw.phases(values: 'Any', *, period_hours: 'float' = 24.0, settings: 'Mapping[str, Any] | None' = None) -&gt; 'PhaseCaller'</code><a class="headerlink" href="#cwphasesvalues-any-period_hours-float-240-settings-mappingstr-any-none-none-phasecaller" title="Permanent link">&para;</a></h2>
+<p>Bind circular phase comparison to labelled phase values.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>values</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Numeric observations; a mapping supplies one array per channel.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>24.0</code></td>
+<td>Reference cycle length in hours.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwaskquestion-str-source-any-none-root-str-path-none-none-settings-mappingstr-any-none-none-params-any-result"><code>cw.ask(question: 'str', *, source: 'Any' = None, root: 'str | Path | None' = None, settings: 'Mapping[str, Any] | None' = None, **params: 'Any') -&gt; 'Result'</code><a class="headerlink" href="#cwaskquestion-str-source-any-none-root-str-path-none-none-settings-mappingstr-any-none-none-params-any-result" title="Permanent link">&para;</a></h2>
+<p>Run one reviewed question or fixed alias; never guesses an action.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Reviewed natural-language question or fixed alias; unknown questions are refused.</td>
+</tr>
+<tr>
+<td><code>source</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>File path, recording specification, or in-memory recording to bind.</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Output directory for actions that write files.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td style="text-align: center;">no</td>
+<td>extra named values</td>
+<td>Named parameters accepted by the selected registered action.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="cwcallaction-str-root-str-path-none-none-params-any-result"><code>cw.call(action: 'str', /, *, root: 'str | Path | None' = None, **params: 'Any') -&gt; 'Result'</code><a class="headerlink" href="#cwcallaction-str-root-str-path-none-none-params-any-result" title="Permanent link">&para;</a></h2>
+<p>Run any registered action with friendly errors and a uniform result.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Registered action name; see the complete action reference.</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Output directory for actions that write files.</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td style="text-align: center;">no</td>
+<td>extra named values</td>
+<td>Named parameters accepted by the selected registered action.</td>
+</tr>
+</tbody>
+</table>
+<h1 id="bound-analysis-methods">Bound analysis methods<a class="headerlink" href="#bound-analysis-methods" title="Permanent link">&para;</a></h1>
+<h2 id="recordingcaller">RecordingCaller<a class="headerlink" href="#recordingcaller" title="Permanent link">&para;</a></h2>
+<h2 id="recordingcallersummaryself-settings-mappingstr-any-none-none-result"><code>RecordingCaller.summary(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallersummaryself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallerqualityself-settings-mappingstr-any-none-none-result"><code>RecordingCaller.quality(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerqualityself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallerperiodself-method-str-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.period(self, method: 'str | None' = None, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerperiodself-method-str-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>One registered period or detrending method, depending on the function.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallercompare_periodsself-methods-sequencestr-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.compare_periods(self, methods: 'Sequence[str] | None' = None, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallercompare_periodsself-methods-sequencestr-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>methods</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Sequence of period-estimator names to run on the same trace.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcalleris_rhythmicself-settings-mappingstr-any-none-none-result"><code>RecordingCaller.is_rhythmic(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcalleris_rhythmicself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallercosinorself-period_hours-float-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.cosinor(self, period_hours: 'float | None' = None, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallercosinorself-period_hours-float-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>period_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Reference cycle length in hours.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result"><code>RecordingCaller.detrend(self, method: 'str' = 'running mean', *, window_hours: 'float' = 24.0, polynomial_degree: 'int' = 3, min_valid_fraction: 'float' = 0.5, bandwidth_hours: 'float | None' = None, low_cut_hours: 'float' = 45.0, high_cut_hours: 'float' = 4.0, filter_order: 'int' = 2, smooth_window_hours: 'float' = 0.0, exclude_hours: 'float | None' = None, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerdetrendself-method-str-running-mean-window_hours-float-240-polynomial_degree-int-3-min_valid_fraction-float-05-bandwidth_hours-float-none-none-low_cut_hours-float-450-high_cut_hours-float-40-filter_order-int-2-smooth_window_hours-float-00-exclude_hours-float-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"running mean"</code></td>
+<td>One registered period or detrending method, depending on the function.</td>
+</tr>
+<tr>
+<td><code>window_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>24.0</code></td>
+<td>Baseline window length in hours.</td>
+</tr>
+<tr>
+<td><code>polynomial_degree</code></td>
+<td style="text-align: center;">no</td>
+<td><code>3</code></td>
+<td>Value used for <code>polynomial degree</code>.</td>
+</tr>
+<tr>
+<td><code>min_valid_fraction</code></td>
+<td style="text-align: center;">no</td>
+<td><code>0.5</code></td>
+<td>Value used for <code>min valid fraction</code>.</td>
+</tr>
+<tr>
+<td><code>bandwidth_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Value used for <code>bandwidth hours</code>.</td>
+</tr>
+<tr>
+<td><code>low_cut_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>45.0</code></td>
+<td>Value used for <code>low cut hours</code>.</td>
+</tr>
+<tr>
+<td><code>high_cut_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>4.0</code></td>
+<td>Value used for <code>high cut hours</code>.</td>
+</tr>
+<tr>
+<td><code>filter_order</code></td>
+<td style="text-align: center;">no</td>
+<td><code>2</code></td>
+<td>Value used for <code>filter order</code>.</td>
+</tr>
+<tr>
+<td><code>smooth_window_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>0.0</code></td>
+<td>Centred smoothing width; zero disables smoothing.</td>
+</tr>
+<tr>
+<td><code>exclude_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Leading duration removed before fitting.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcalleractogramself-output-str-path-none-none-options-mappingstr-any-none-none-individual_layers-bool-false-settings-mappingstr-any-none-none-result"><code>RecordingCaller.actogram(self, *, output: 'str | Path | None' = None, options: 'Mapping[str, Any] | None' = None, individual_layers: 'bool' = False, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcalleractogramself-output-str-path-none-none-options-mappingstr-any-none-none-individual_layers-bool-false-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>output</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Directory beneath which generated files are written.</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Actogram display/export overrides.</td>
+</tr>
+<tr>
+<td><code>individual_layers</code></td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>Also save one actogram layer per measurement channel.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallermethodsself-settings-mappingstr-any-none-none-result"><code>RecordingCaller.methods(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallermethodsself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallerrunself-action-str-root-str-path-none-none-params-any-result"><code>RecordingCaller.run(self, action: 'str', /, *, root: 'str | Path | None' = None, **params: 'Any') -&gt; 'Result'</code><a class="headerlink" href="#recordingcallerrunself-action-str-root-str-path-none-none-params-any-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>action</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Registered action name; see the complete action reference.</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Output directory for actions that write files.</td>
+</tr>
+<tr>
+<td><code>params</code></td>
+<td style="text-align: center;">no</td>
+<td>extra named values</td>
+<td>Named parameters accepted by the selected registered action.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="tracecaller">TraceCaller<a class="headerlink" href="#tracecaller" title="Permanent link">&para;</a></h2>
+<h2 id="tracecallercouplingself-other-tracedata-tracecaller-sequencefloat-settings-mappingstr-any-none-none-result"><code>TraceCaller.coupling(self, other: "TraceData | 'TraceCaller' | Sequence[float]", *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#tracecallercouplingself-other-tracedata-tracecaller-sequencefloat-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>other</code></td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>Second aligned trace or trace caller used in pairwise coupling.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="populationcaller">PopulationCaller<a class="headerlink" href="#populationcaller" title="Permanent link">&para;</a></h2>
+<h2 id="populationcallersynchronyself-settings-mappingstr-any-none-none-result"><code>PopulationCaller.synchrony(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#populationcallersynchronyself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="populationcallerperiod_dispersionself-settings-mappingstr-any-none-none-result"><code>PopulationCaller.period_dispersion(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#populationcallerperiod_dispersionself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phasecaller">PhaseCaller<a class="headerlink" href="#phasecaller" title="Permanent link">&para;</a></h2>
+<h2 id="phasecallercompareself-settings-mappingstr-any-none-none-result"><code>PhaseCaller.compare(self, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#phasecallercompareself-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="phasecallersummaryself-label-str-settings-mappingstr-any-none-none-result"><code>PhaseCaller.summary(self, *, label: 'str' = '', settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#phasecallersummaryself-label-str-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>label</code></td>
+<td style="text-align: center;">no</td>
+<td><code>""</code></td>
+<td>Value used for <code>label</code>.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="channelcaller">ChannelCaller<a class="headerlink" href="#channelcaller" title="Permanent link">&para;</a></h2>
+<h2 id="channelcallercompareself-first-str-none-none-second-str-none-none-settings-mappingstr-any-none-none-result"><code>ChannelCaller.compare(self, first: 'str | None' = None, second: 'str | None' = None, *, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#channelcallercompareself-first-str-none-none-second-str-none-none-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>first</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>First channel key; omitted with <code>second</code> to use the two available channels.</td>
+</tr>
+<tr>
+<td><code>second</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Second channel key; omitted with <code>first</code> to use the two available channels.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

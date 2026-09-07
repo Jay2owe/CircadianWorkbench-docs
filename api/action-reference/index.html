@@ -1,0 +1,6980 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Local, reproducible circadian activity analysis">
+      
+      
+      
+        <link rel="canonical" href="https://jay2owe.github.io/CircadianWorkbench-docs/api/action-reference/">
+      
+      
+        <link rel="prev" href="../python-reference/">
+      
+      
+        <link rel="next" href="../../analyses/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Complete action reference - Circadian Workbench</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.484c7ddc.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#complete-action-reference" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Circadian Workbench" class="md-header__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Circadian Workbench
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Complete action reference
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Circadian Workbench" class="md-nav__button md-logo" aria-label="Circadian Workbench" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Circadian Workbench
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../getting-started/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting started
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/supported-files/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported files
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Callers and automation
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Callers and automation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../python-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Python interface
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete action reference
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete action reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describe_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        describe_config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize_config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load_recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_recording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_group_colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_group_colours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhythm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rhythm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#periodograms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periodograms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        daily_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onset_fits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onset_fits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peak_aligned_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        peak_aligned_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cosinor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#period_methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        period_methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimate_period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        estimate_period
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_periods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhythmicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rhythmicity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonparametric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nonparametric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fft
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autocorrelation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wavelet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wavelet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        actogram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time_series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select_frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_frame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods_paragraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        methods_paragraph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis_script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analysis_script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write_analysis_script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        write_analysis_script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_actogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_actogram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_figures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detrend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detrend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        group_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_response_curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_response_curve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_phase_response_curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_phase_response_curves
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instantaneous_phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instantaneous_phase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchrony" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        synchrony
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#period_dispersion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        period_dispersion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reentrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reentrainment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        masking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#food_anticipation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        food_anticipation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two_process_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two_process_fit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two_process_predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two_process_predict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrainment_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrainment_range
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicted_reentrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predicted_reentrainment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paired_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paired_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#longitudinal_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        longitudinal_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        channel_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        splitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ultradian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ultradian
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dose_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dose_response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature_compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        temperature_compensation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample_size
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_rhythms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_rhythms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        group_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_group_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_group_figure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnosis_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        diagnosis_groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        study_report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_diagnosis_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_diagnosis_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_output
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../analyses/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyses
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Analyses
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/circadian-workbench-analysis-explained/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analysis explained
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Period and rhythm
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Period and rhythm
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/compare-period-estimates/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare period estimates
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/rhythmicity/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test rhythmicity
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/splitting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Detect two circadian components
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/instantaneous-phase/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Track phase and period
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Entrainment and perturbation
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-response-curve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit a phase-response curve
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/dose-response/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure a dose response
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-angle/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure phase angle
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/masking/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure acute masking
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sleep and environment
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sleep and environment
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/immobility-sleep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score immobility sleep
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/food-anticipation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure food anticipation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/ultradian-rhythms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Find ultradian rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/temperature-compensation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Test temperature compensation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_6" id="__nav_4_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Within-recording population
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Within-recording population
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/channel-comparison/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Compare measurement channels
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/population-synchrony/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure population synchrony
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/phase-map/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Map phase across space
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/coupling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure pairwise coupling
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/period-dispersion/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Separate phase and period dispersion
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_7" id="__nav_4_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prediction and design
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Prediction and design
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/sample-size/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Plan sample size
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/entrainment-range/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict the entrainment range
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/predicted-reentrainment/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict re-entrainment
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/two-process-fit/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fit the two-process sleep model
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../analyses/two-process-predict/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Predict sleep pressure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../parameters/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Parameters
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Parameters
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../parameters/config-reference/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Complete configuration reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../outputs/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Outputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../workflows/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Workflows
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Workflows
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/first-recording/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a first recording
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/period-choice/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a period estimate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/entrainment-and-perturbation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Measure entrainment and perturbation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/sleep-and-ultradian/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Score sleep and shorter rhythms
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/within-recording-population/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Analyse a within-recording population
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/prediction-and-design/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Run prediction and design calculations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/publication-export/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Build a publication figure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/project-replay/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Replay a saved project
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../workflows/backup-rehearsal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Rehearse backup and restore
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gallery/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Gallery
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Gallery
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gallery/known-answer-examples/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Known-answer examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../troubleshooting/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Troubleshooting
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_9" id="__nav_9_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Troubleshooting
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/inputs-and-fits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Inputs and fits
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/application-and-exports/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Application and exports
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../troubleshooting/snapshots/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Snapshots
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Glossary
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../developer/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Developer maintenance
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#inspect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        inspect
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#describe_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        describe_config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize_config" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize_config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#load_recording" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        load_recording
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        list_output
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#set_group_colours" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        set_group_colours
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analyze" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analyze
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quality" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        quality
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhythm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rhythm
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#periodograms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        periodograms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daily_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        daily_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#onset_fits" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        onset_fits
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#peak_aligned_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        peak_aligned_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cosinor" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        cosinor
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#period_methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        period_methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#estimate_period" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        estimate_period
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_periods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_periods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rhythmicity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        rhythmicity
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nonparametric" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        nonparametric
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        bouts
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fft" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        fft
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#autocorrelation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        autocorrelation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#wavelet" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        wavelet
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#actogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        actogram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time_series" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        time_series
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#select_frame" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        select_frame
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#methods_paragraph" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        methods_paragraph
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#analysis_script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        analysis_script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#write_analysis_script" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        write_analysis_script
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_actogram" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_actogram
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_figures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_figures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#detrend" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        detrend
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        group_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_response_curve" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_response_curve
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_phase_response_curves" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_phase_response_curves
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instantaneous_phase" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        instantaneous_phase
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#synchrony" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        synchrony
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#period_dispersion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        period_dispersion
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_angle" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_angle
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reentrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        reentrainment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#masking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        masking
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sleep" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sleep
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#food_anticipation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        food_anticipation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two_process_fit" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two_process_fit
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two_process_predict" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        two_process_predict
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#entrainment_range" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        entrainment_range
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#predicted_reentrainment" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        predicted_reentrainment
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#paired_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        paired_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#longitudinal_measures" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        longitudinal_measures
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#channel_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        channel_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#splitting" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        splitting
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ultradian" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        ultradian
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dose_response" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        dose_response
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#temperature_compensation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        temperature_compensation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#phase_map" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phase_map
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#coupling" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        coupling
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sample_size" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        sample_size
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#compare_rhythms" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        compare_rhythms
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#group_comparison" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        group_comparison
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_group_figure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_group_figure
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagnosis_groups" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        diagnosis_groups
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#study_report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        study_report
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#render_diagnosis_profile" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        render_diagnosis_profile
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear_output" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        clear_output
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="complete-action-reference">Complete action reference<a class="headerlink" href="#complete-action-reference" title="Permanent link">&para;</a></h1>
+<p>This page is generated from the live registry and documents all 68 callable actions. The signature and parameter tables are therefore the contract enforced by the runner, not a parallel handwritten list.</p>
+<p>All successful actions return data, warnings, provenance, and an equivalent replay script. File-writing actions place files under <code>root</code>; source recordings remain read-only.</p>
+<h2 id="inspect"><code>inspect</code><a class="headerlink" href="#inspect" title="Permanent link">&para;</a></h2>
+<p>Grounding snapshot: actions, defaults, and optional recording metadata.</p>
+<pre><code class="language-python">cw.call(&quot;inspect&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="describe_config"><code>describe_config</code><a class="headerlink" href="#describe_config" title="Permanent link">&para;</a></h2>
+<p>Every config key, default, and enum domain.</p>
+<pre><code class="language-python">cw.call(&quot;describe_config&quot;)
+</code></pre>
+<p>This action has no parameters.</p>
+<h2 id="normalize_config"><code>normalize_config</code><a class="headerlink" href="#normalize_config" title="Permanent link">&para;</a></h2>
+<p>Clamp and complete a partial config.</p>
+<pre><code class="language-python">cw.call(&quot;normalize_config&quot;, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="load_recording"><code>load_recording</code><a class="headerlink" href="#load_recording" title="Permanent link">&para;</a></h2>
+<p>Import a recording and return metadata.</p>
+<pre><code class="language-python">cw.call(&quot;load_recording&quot;, recording)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="list_output"><code>list_output</code><a class="headerlink" href="#list_output" title="Permanent link">&para;</a></h2>
+<p>List files written under the output root.</p>
+<pre><code class="language-python">cw.call(&quot;list_output&quot;)
+</code></pre>
+<p>This action has no parameters.</p>
+<h2 id="set_group_colours"><code>set_group_colours</code><a class="headerlink" href="#set_group_colours" title="Permanent link">&para;</a></h2>
+<p>Fix the colour a named group is drawn in, overriding the house cycle.</p>
+<pre><code class="language-python">cw.call(&quot;set_group_colours&quot;, colours=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>colours</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Group label to colour: {'WT': 'circadian_teal', 'KO': '#ff00aa'}. A house colour name, a matplotlib name, or a literal hex. Omit to read the current table; pass {} to clear it. Applies to every figure drawn afterwards, so a group keeps its colour regardless of what order the groups arrive in.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="summary"><code>summary</code><a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>Headline read on one recording: period, rhythm, quality, metrics.</p>
+<pre><code class="language-python">cw.call(&quot;summary&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="analyze"><code>analyze</code><a class="headerlink" href="#analyze" title="Permanent link">&para;</a></h2>
+<p>Full analysis with selectable sections.</p>
+<pre><code class="language-python">cw.call(&quot;analyze&quot;, recording, config=None, sections=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>sections</code></td>
+<td>array of string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Analysis sections to return; use ['all'] for full output.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="quality"><code>quality</code><a class="headerlink" href="#quality" title="Permanent link">&para;</a></h2>
+<p>Data-quality metrics for the selected window.</p>
+<pre><code class="language-python">cw.call(&quot;quality&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="rhythm"><code>rhythm</code><a class="headerlink" href="#rhythm" title="Permanent link">&para;</a></h2>
+<p>Rhythmic/arrhythmic verdict for the configured periodogram.</p>
+<pre><code class="language-python">cw.call(&quot;rhythm&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="periodograms"><code>periodograms</code><a class="headerlink" href="#periodograms" title="Permanent link">&para;</a></h2>
+<p>Lomb-Scargle, chi-square and F periodograms.</p>
+<pre><code class="language-python">cw.call(&quot;periodograms&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="daily_measures"><code>daily_measures</code><a class="headerlink" href="#daily_measures" title="Permanent link">&para;</a></h2>
+<p>Daily onset, offset, alpha and phase markers.</p>
+<pre><code class="language-python">cw.call(&quot;daily_measures&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="onset_fits"><code>onset_fits</code><a class="headerlink" href="#onset_fits" title="Permanent link">&para;</a></h2>
+<p>Regression fits through daily onsets and offsets.</p>
+<pre><code class="language-python">cw.call(&quot;onset_fits&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="profile"><code>profile</code><a class="headerlink" href="#profile" title="Permanent link">&para;</a></h2>
+<p>Folded average-day activity profile.</p>
+<pre><code class="language-python">cw.call(&quot;profile&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="peak_aligned_profile"><code>peak_aligned_profile</code><a class="headerlink" href="#peak_aligned_profile" title="Permanent link">&para;</a></h2>
+<p>Align an average-cycle profile to a participant morning or evening peak.</p>
+<pre><code class="language-python">cw.call(&quot;peak_aligned_profile&quot;, recording, config=None, peak_period, anchor_amplitude=None, peak_options=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>peak_period</code></td>
+<td>string</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Peak to detect and align: morning (07:00-14:00) or evening (17:00-22:00).</td>
+</tr>
+<tr>
+<td><code>anchor_amplitude</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>activity amplitude</td>
+<td>Optional established participant peak amplitude. When supplied, the unsmoothed aligned profile is scaled so time zero equals this value.</td>
+</tr>
+<tr>
+<td><code>peak_options</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Peak-alignment options: alignment_window_hours, smoothing_window_bins, polynomial_order, minimum_peak_distance_hours, active_window_hours, and allow_window_max_fallback.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="cosinor"><code>cosinor</code><a class="headerlink" href="#cosinor" title="Permanent link">&para;</a></h2>
+<p>Cosinor fit at the configured period.</p>
+<pre><code class="language-python">cw.call(&quot;cosinor&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="period_methods"><code>period_methods</code><a class="headerlink" href="#period_methods" title="Permanent link">&para;</a></h2>
+<p>Which period methods are available, and what each one can report.</p>
+<pre><code class="language-python">cw.call(&quot;period_methods&quot;)
+</code></pre>
+<p>This action has no parameters.</p>
+<h2 id="estimate_period"><code>estimate_period</code><a class="headerlink" href="#estimate_period" title="Permanent link">&para;</a></h2>
+<p>Period, phase and amplitude by one named method.</p>
+<pre><code class="language-python">cw.call(&quot;estimate_period&quot;, recording, config=None, method=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>method</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Which period method to run: lomb, chi_square, f, fft_nlls, mesa, mfourfit, spectrum_resampling, jtk or ejtk. Omit to use the config's period_method (default lomb). Run period_methods for what each one can and cannot report -- MESA and mFourFit give no error bar and no significance measure, and FFT-NLLS is the only one that yields RAE.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="compare_periods"><code>compare_periods</code><a class="headerlink" href="#compare_periods" title="Permanent link">&para;</a></h2>
+<p>Run several period methods over one record and return one comparison table.</p>
+<pre><code class="language-python">cw.call(&quot;compare_periods&quot;, recording, config=None, methods=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>methods</code></td>
+<td>array of strings</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Which period methods to compare, as a list of registry keys. Omit to use the config's period_methods. BioDare2's advice is to pair any method that cannot test significance (MESA, mFourFit, FFT-NLLS) with one that can (lomb), and discard the rest if the Lomb-Scargle periodogram rejects the record.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="rhythmicity"><code>rhythmicity</code><a class="headerlink" href="#rhythmicity" title="Permanent link">&para;</a></h2>
+<p>JTK / eJTK rhythmicity test across sparsely sampled series, corrected together.</p>
+<pre><code class="language-python">cw.call(&quot;rhythmicity&quot;, recordings, config=None, rhythmicity_method=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recordings</code></td>
+<td>array of recording specs</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Recordings to pool into one group trace.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>rhythmicity_method</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>jtk for classic JTK_CYCLE or ejtk for the permutation null (default). eJTK is the one to use; classic JTK is kept for comparability with published work and is known to be anti-conservative. Both are for sparsely sampled, omics-like data -- a densely sampled record is binned down to jtk_max_points before either sees it.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="nonparametric"><code>nonparametric</code><a class="headerlink" href="#nonparametric" title="Permanent link">&para;</a></h2>
+<p>IS, IV, RA, L5 and M10 metrics.</p>
+<pre><code class="language-python">cw.call(&quot;nonparametric&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="bouts"><code>bouts</code><a class="headerlink" href="#bouts" title="Permanent link">&para;</a></h2>
+<p>Activity bout detection and summary statistics.</p>
+<pre><code class="language-python">cw.call(&quot;bouts&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="fft"><code>fft</code><a class="headerlink" href="#fft" title="Permanent link">&para;</a></h2>
+<p>FFT amplitude or power spectrum.</p>
+<pre><code class="language-python">cw.call(&quot;fft&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="autocorrelation"><code>autocorrelation</code><a class="headerlink" href="#autocorrelation" title="Permanent link">&para;</a></h2>
+<p>Autocorrelation function and best period.</p>
+<pre><code class="language-python">cw.call(&quot;autocorrelation&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="wavelet"><code>wavelet</code><a class="headerlink" href="#wavelet" title="Permanent link">&para;</a></h2>
+<p>Continuous wavelet transform power and ridge.</p>
+<pre><code class="language-python">cw.call(&quot;wavelet&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="actogram"><code>actogram</code><a class="headerlink" href="#actogram" title="Permanent link">&para;</a></h2>
+<p>Actogram matrix and display levels (the numbers behind the plot).</p>
+<pre><code class="language-python">cw.call(&quot;actogram&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="time_series"><code>time_series</code><a class="headerlink" href="#time_series" title="Permanent link">&para;</a></h2>
+<p>Binned time series for every measurement channel.</p>
+<pre><code class="language-python">cw.call(&quot;time_series&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="select_frame"><code>select_frame</code><a class="headerlink" href="#select_frame" title="Permanent link">&para;</a></h2>
+<p>Selected sample window as records, with truncation metadata.</p>
+<pre><code class="language-python">cw.call(&quot;select_frame&quot;, recording, config=None, limit=200)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>limit</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>200</code></td>
+<td>rows</td>
+<td>Maximum rows returned by select_frame.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="methods_paragraph"><code>methods_paragraph</code><a class="headerlink" href="#methods_paragraph" title="Permanent link">&para;</a></h2>
+<p>Publication-ready Methods paragraph for the actual analysis.</p>
+<pre><code class="language-python">cw.call(&quot;methods_paragraph&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="analysis_script"><code>analysis_script</code><a class="headerlink" href="#analysis_script" title="Permanent link">&para;</a></h2>
+<p>Generate (but do not save) a runnable Python script that reproduces this analysis.</p>
+<pre><code class="language-python">cw.call(&quot;analysis_script&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="write_analysis_script"><code>write_analysis_script</code><a class="headerlink" href="#write_analysis_script" title="Permanent link">&para;</a></h2>
+<p>Write the replay script under root/scripts.</p>
+<pre><code class="language-python">cw.call(&quot;write_analysis_script&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="render_actogram"><code>render_actogram</code><a class="headerlink" href="#render_actogram" title="Permanent link">&para;</a></h2>
+<p>Render actogram SVG under root/figures.</p>
+<pre><code class="language-python">cw.call(&quot;render_actogram&quot;, recording, config=None, options=None, individual_layers=False)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>options</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Actogram export options.</td>
+</tr>
+<tr>
+<td><code>individual_layers</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Also write one SVG per measurement channel.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="render_figures"><code>render_figures</code><a class="headerlink" href="#render_figures" title="Permanent link">&para;</a></h2>
+<p>Render the full figure set under root/figures.</p>
+<pre><code class="language-python">cw.call(&quot;render_figures&quot;, recording, config=None, interface_state=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>interface_state</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Figure-selection state from the UI.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="detrend"><code>detrend</code><a class="headerlink" href="#detrend" title="Permanent link">&para;</a></h2>
+<p>Baseline subtract, smooth, optionally exclude transients, and fit damping.</p>
+<pre><code class="language-python">cw.call(&quot;detrend&quot;, recording, config=None, detrend_method='running_mean', window_hours=24.0, polynomial_degree=3, min_valid_fraction=0.5, bandwidth_hours=None, low_cut_hours=45.0, high_cut_hours=4.0, filter_order=2, smooth_window_hours=0.0, exclude_hours=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>detrend_method</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"running_mean"</code></td>
+<td>-</td>
+<td>Baseline removal method: none, linear, running_mean, polynomial, cubic/bicubic, poly6, kernel/baseline, amp_baseline, or frequency.</td>
+</tr>
+<tr>
+<td><code>window_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>24.0</code></td>
+<td>hours</td>
+<td>Baseline window.</td>
+</tr>
+<tr>
+<td><code>polynomial_degree</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>3</code></td>
+<td>-</td>
+<td>Polynomial baseline degree; poly6/degree6 force 6 and cubic/poly3/bicubic force 3.</td>
+</tr>
+<tr>
+<td><code>min_valid_fraction</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.5</code></td>
+<td>-</td>
+<td>Minimum finite share of a local smoothing window.</td>
+</tr>
+<tr>
+<td><code>bandwidth_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>Gaussian kernel standard deviation; omitted uses one quarter of window_hours.</td>
+</tr>
+<tr>
+<td><code>low_cut_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>45.0</code></td>
+<td>hours</td>
+<td>Longest period retained by frequency detrending.</td>
+</tr>
+<tr>
+<td><code>high_cut_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>4.0</code></td>
+<td>hours</td>
+<td>Shortest period retained by frequency detrending.</td>
+</tr>
+<tr>
+<td><code>filter_order</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>2</code></td>
+<td>-</td>
+<td>Butterworth frequency-filter order.</td>
+</tr>
+<tr>
+<td><code>smooth_window_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.0</code></td>
+<td>hours</td>
+<td>Centred smoothing window; zero disables smoothing.</td>
+</tr>
+<tr>
+<td><code>exclude_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>Leading hours to discard before fitting.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="group_profile"><code>group_profile</code><a class="headerlink" href="#group_profile" title="Permanent link">&para;</a></h2>
+<p>Pool recordings into a mean +/- SEM group trace.</p>
+<pre><code class="language-python">cw.call(&quot;group_profile&quot;, recordings, config=None, normalize='own_mean', time_axis='clock_time', pool_order='profile_then_pool', statistic='mean', within_recording_reducer='mean', detrended=False)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recordings</code></td>
+<td>array of recording specs</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Recordings to pool into one group trace.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>normalize</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"own_mean"</code></td>
+<td>-</td>
+<td>Value normalisation before pooling.</td>
+</tr>
+<tr>
+<td><code>time_axis</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"clock_time"</code></td>
+<td>-</td>
+<td>clock_time, tau_scaled, or onset_aligned.</td>
+</tr>
+<tr>
+<td><code>pool_order</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"profile_then_pool"</code></td>
+<td>-</td>
+<td>profile_then_pool or virtual_animal.</td>
+</tr>
+<tr>
+<td><code>statistic</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>mean or median.</td>
+</tr>
+<tr>
+<td><code>within_recording_reducer</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>How each recording contributes at each phase bin before pooling: mean averages selected cycles; max retains the largest observed binned value across the selected recording.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Whether inputs are already baseline-subtracted.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="phase_response_curve"><code>phase_response_curve</code><a class="headerlink" href="#phase_response_curve" title="Permanent link">&para;</a></h2>
+<p>Circadian time of a stimulus, per-animal shift, the cohort PRC and its type.</p>
+<pre><code class="language-python">cw.call(&quot;phase_response_curve&quot;, animals, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>animals</code></td>
+<td>array of objects</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>One entry per animal in the pulse experiment. Either a record to score -- {'recording': spec, 'stimulus': '2026-01-08 18:00', 'label': 'm01', 'config': {...}} -- or a point already scored elsewhere: {'circadian_time': 15.2, 'shift_hours': -1.4, 'label': 'm01'}. A record needs fit1_start/fit1_end before the pulse and fit2_start/fit2_end after it in its config, and 'stimulus' is the wall-clock time the pulse landed (or hours from the start of the record's first day). An animal whose pre-stimulus fit is too short is dropped with a warning rather than failing the cohort.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="compare_phase_response_curves"><code>compare_phase_response_curves</code><a class="headerlink" href="#compare_phase_response_curves" title="Permanent link">&para;</a></h2>
+<p>Fit two cohorts' phase response curves with one model and test each difference.</p>
+<pre><code class="language-python">cw.call(&quot;compare_phase_response_curves&quot;, shift_cohorts, config=None, unit='subject')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>shift_cohorts</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Two labelled cohorts of pulsed animals, to test whether their phase response curves differ: {'WT': [animal, ...], 'KO': [...]}. Each animal takes the same shape phase_response_curve's <code>animals</code> does -- a record to score, or a point already scored. Exactly two cohorts: which contrast is meant is a decision about the experiment.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"subject"</code></td>
+<td>-</td>
+<td>Unit of analysis: subject, slice, or cell.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="instantaneous_phase"><code>instantaneous_phase</code><a class="headerlink" href="#instantaneous_phase" title="Permanent link">&para;</a></h2>
+<p>Hilbert phase, instantaneous period and amplitude envelope over time.</p>
+<pre><code class="language-python">cw.call(&quot;instantaneous_phase&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="phase_comparison"><code>phase_comparison</code><a class="headerlink" href="#phase_comparison" title="Permanent link">&para;</a></h2>
+<p>Circular summary and between-group test for phase.</p>
+<pre><code class="language-python">cw.call(&quot;phase_comparison&quot;, phases, config=None, period_hours=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phases</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>Phase values grouped by label: {'WT': [6.1, 5.8, ...], 'KO': [...]}. These are phases the caller already has -- onset hours from daily_measures, phase_hours from estimate_period, or their own scoring. This action does not compute phases, so the numbers may come from anywhere as long as they are clock hours on one shared period.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The cycle the phases live on. Omit to use the config's period_hours (24 h by default). A free-running cohort should pass its own tau, so that 'one cycle' means one of the animals' cycles rather than one solar day. <code>splitting</code> uses it for a second purpose that is the same idea: the period the resolution element P**2/T is worked out at, which sets how far apart two components must be before that record can show them to differ.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="phase_summary"><code>phase_summary</code><a class="headerlink" href="#phase_summary" title="Permanent link">&para;</a></h2>
+<p>Circular mean, concentration and Rayleigh test for one set of phases.</p>
+<pre><code class="language-python">cw.call(&quot;phase_summary&quot;, phase_values, config=None, period_hours=None, label='')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>phase_values</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>Phase values for one group or tissue, expressed on one shared cycle.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The cycle the phases live on. Omit to use the config's period_hours (24 h by default). A free-running cohort should pass its own tau, so that 'one cycle' means one of the animals' cycles rather than one solar day. <code>splitting</code> uses it for a second purpose that is the same idea: the period the resolution element P**2/T is worked out at, which sets how far apart two components must be before that record can show them to differ.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>""</code></td>
+<td>-</td>
+<td>Readable name returned with the single-group phase summary.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="synchrony"><code>synchrony</code><a class="headerlink" href="#synchrony" title="Permanent link">&para;</a></h2>
+<p>Kuramoto coherence over single cells, and whether damping is desynchrony or amplitude loss.</p>
+<pre><code class="language-python">cw.call(&quot;synchrony&quot;, traces, hours, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>traces</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>recording units</td>
+<td>Single-cell traces on one shared time grid: {'roi_1': [values], ...}. Per-ROI output from a slice recording.</td>
+</tr>
+<tr>
+<td><code>hours</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>The shared time grid the traces are sampled on, in hours from the start of the recording.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="period_dispersion"><code>period_dispersion</code><a class="headerlink" href="#period_dispersion" title="Permanent link">&para;</a></h2>
+<p>Whether a population lost coherence because its cells' periods diverged or because their phases were displaced.</p>
+<pre><code class="language-python">cw.call(&quot;period_dispersion&quot;, traces, hours, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>traces</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>recording units</td>
+<td>Single-cell traces on one shared time grid: {'roi_1': [values], ...}. Per-ROI output from a slice recording.</td>
+</tr>
+<tr>
+<td><code>hours</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>The shared time grid the traces are sampled on, in hours from the start of the recording.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="phase_angle"><code>phase_angle</code><a class="headerlink" href="#phase_angle" title="Permanent link">&para;</a></h2>
+<p>How far the animal's daily marker sits from the light transition, and whether that angle held.</p>
+<pre><code class="language-python">cw.call(&quot;phase_angle&quot;, recording, cohorts=None, config=None, marker=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>cohorts</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Recordings grouped by label, to test whether the groups hold different angles of entrainment: {'WT': [spec, ...], 'KO': [...]}. One angle per animal, so the unit of analysis is the animal. Omit it and only the focal recording is answered for.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>marker</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Which daily marker the angle of entrainment is measured from: onset, offset or acrophase. Defaults to the entrainment_marker config key, and is never guessed from the data.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="reentrainment"><code>reentrainment</code><a class="headerlink" href="#reentrainment" title="Permanent link">&para;</a></h2>
+<p>How many cycles the animal took to catch up with a shifted schedule, and at what rate.</p>
+<pre><code class="language-python">cw.call(&quot;reentrainment&quot;, recording, config=None, shift_day=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>shift_day</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>The date the light schedule moved, as YYYY-MM-DD. Omit it and the date is read out of the schedule itself; supply it when the schedule in the config does not carry the move. The shift date belongs to neither side: the first full day on the new schedule is day 1.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="masking"><code>masking</code><a class="headerlink" href="#masking" title="Permanent link">&para;</a></h2>
+<p>Whether a light pulse changed activity while it was on, which is not the same finding as a phase shift.</p>
+<pre><code class="language-python">cw.call(&quot;masking&quot;, recording, pulse_start, pulse_hours, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>pulse_start</code></td>
+<td>string</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>When the light pulse began, as an ISO date-time (2026-05-11T22:00). The same clock window on the days before it becomes the control.</td>
+</tr>
+<tr>
+<td><code>pulse_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>How long the pulse lasted. Must be greater than zero.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="sleep"><code>sleep</code><a class="headerlink" href="#sleep" title="Permanent link">&para;</a></h2>
+<p>Sleep scored as sustained immobility, split by light and dark, with bouts and fragmentation.</p>
+<pre><code class="language-python">cw.call(&quot;sleep&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="food_anticipation"><code>food_anticipation</code><a class="headerlink" href="#food_anticipation" title="Permanent link">&para;</a></h2>
+<p>Whether the animal became active before a declared mealtime, and whether that anticipation survived a fast.</p>
+<pre><code class="language-python">cw.call(&quot;food_anticipation&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="two_process_fit"><code>two_process_fit</code><a class="headerlink" href="#two_process_fit" title="Permanent link">&para;</a></h2>
+<p>Fit the two-process model of sleep regulation to a scored record, and report which of its parameters the record does not separate.</p>
+<pre><code class="language-python">cw.call(&quot;two_process_fit&quot;, sleep_result, period_hours=None, acrophase_hours=None, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sleep_result</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>An immobility_sleep result, whole. A record it refused to score is refused here for the same reason rather than re-derived.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The cycle the phases live on. Omit to use the config's period_hours (24 h by default). A free-running cohort should pass its own tau, so that 'one cycle' means one of the animals' cycles rather than one solar day. <code>splitting</code> uses it for a second purpose that is the same idea: the period the resolution element P**2/T is worked out at, which sets how far apart two components must be before that record can show them to differ.</td>
+</tr>
+<tr>
+<td><code>acrophase_hours</code></td>
+<td>number</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The circadian term's acrophase, in hours, from the package's own measurement. It is echoed back unchanged: a model that re-fitted it would compete with the measurement it came from.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="two_process_predict"><code>two_process_predict</code><a class="headerlink" href="#two_process_predict" title="Permanent link">&para;</a></h2>
+<p>Run the fitted sleep model forward under a proposed cycle length, once per parameter set the record cannot rule out.</p>
+<pre><code class="language-python">cw.call(&quot;two_process_predict&quot;, fit, schedule, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>fit</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>A two_process_fit result, whole. A fit with no parameters -- a record the model refused -- is refused here rather than run with defaults.</td>
+</tr>
+<tr>
+<td><code>schedule</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The proposed schedule: <code>days</code>, <code>period_hours</code>, and optionally <code>acrophase_hours</code> and <code>label</code>. The acrophase defaults to the one the record was fitted under, which assumes the animal holds the same phase angle; where it would not, entrainment_range predicts the new one and it should be passed here.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="entrainment_range"><code>entrainment_range</code><a class="headerlink" href="#entrainment_range" title="Permanent link">&para;</a></h2>
+<p>Which zeitgeber periods a measured phase response curve predicts this animal can entrain to, and the phase angle it would sit at.</p>
+<pre><code class="language-python">cw.call(&quot;entrainment_range&quot;, curve, tau_hours, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curve</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>A phase_response_curve result, whole. Its <code>fit</code> is what is iterated; a curve with no fit -- too few animals -- is refused rather than predicted from.</td>
+</tr>
+<tr>
+<td><code>tau_hours</code></td>
+<td>number</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>The animal's own free-running period, in hours. The cohort curve does not carry it because a cohort has one per animal.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="predicted_reentrainment"><code>predicted_reentrainment</code><a class="headerlink" href="#predicted_reentrainment" title="Permanent link">&para;</a></h2>
+<p>How many cycles the same curve predicts a schedule shift will take, and the transient on the way.</p>
+<pre><code class="language-python">cw.call(&quot;predicted_reentrainment&quot;, curve, tau_hours, shift_hours, t_hours=24.0, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>curve</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>A phase_response_curve result, whole. Its <code>fit</code> is what is iterated; a curve with no fit -- too few animals -- is refused rather than predicted from.</td>
+</tr>
+<tr>
+<td><code>tau_hours</code></td>
+<td>number</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>The animal's own free-running period, in hours. The cohort curve does not carry it because a cohort has one per animal.</td>
+</tr>
+<tr>
+<td><code>shift_hours</code></td>
+<td>number</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>How far the schedule moved, in hours, POSITIVE for an advance -- the transition arriving earlier -- which is the phase response curve's own sign convention.</td>
+</tr>
+<tr>
+<td><code>t_hours</code></td>
+<td>number</td>
+<td style="text-align: center;">no</td>
+<td><code>24.0</code></td>
+<td>hours</td>
+<td>The zeitgeber period the animal is being shifted within, in hours.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="paired_measures"><code>paired_measures</code><a class="headerlink" href="#paired_measures" title="Permanent link">&para;</a></h2>
+<p>The same subjects measured in two epochs: what moved, by how much, and whether pairing bought any precision.</p>
+<pre><code class="language-python">cw.call(&quot;paired_measures&quot;, epochs, config=None, circular_measures=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>epochs</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The epochs of one study, each a list of subject entries: {"baseline": [{"subject_id": "m01", "measures": {"period_hours": 23.8}}, ...], "treatment": [...]}. Pairing is by subject_id, so a subject missing from any epoch is dropped and named. <code>paired_measures</code> takes exactly two and <code>longitudinal_measures</code> three or more; each refuses the other's shape by name.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>circular_measures</code></td>
+<td>array</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Which measure names are clock times rather than plain numbers, e.g. ["acrophase_hours"]. Those are differenced round the circle -- 23.5 h to 00.5 h is +1 h, not -23 h -- and tested with a Rayleigh test. Nothing is inferred from a name.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="longitudinal_measures"><code>longitudinal_measures</code><a class="headerlink" href="#longitudinal_measures" title="Permanent link">&para;</a></h2>
+<p>The same subjects measured at three or more ordered visits: the omnibus across visits, the linear trend along them, and the pairs.</p>
+<pre><code class="language-python">cw.call(&quot;longitudinal_measures&quot;, epochs, config=None, circular_measures=None, order=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>epochs</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The epochs of one study, each a list of subject entries: {"baseline": [{"subject_id": "m01", "measures": {"period_hours": 23.8}}, ...], "treatment": [...]}. Pairing is by subject_id, so a subject missing from any epoch is dropped and named. <code>paired_measures</code> takes exactly two and <code>longitudinal_measures</code> three or more; each refuses the other's shape by name.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>circular_measures</code></td>
+<td>array</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Which measure names are clock times rather than plain numbers, e.g. ["acrophase_hours"]. Those are differenced round the circle -- 23.5 h to 00.5 h is +1 h, not -23 h -- and tested with a Rayleigh test. Nothing is inferred from a name.</td>
+</tr>
+<tr>
+<td><code>order</code></td>
+<td>array</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>The epoch labels in study order, e.g. ["baseline", "6_months", "12_months"]. The linear trend is fitted along this axis, so it decides what rising and falling mean. Without it the order the epochs arrived in is used and said to have been assumed.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="channel_comparison"><code>channel_comparison</code><a class="headerlink" href="#channel_comparison" title="Permanent link">&para;</a></h2>
+<p>The lag between two measurement channels of one subject, with each channel's own period so the lag is not misread as a phase angle.</p>
+<pre><code class="language-python">cw.call(&quot;channel_comparison&quot;, recording, channels, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>channels</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Exactly two measurement channel keys from this recording, e.g. ["activity", "body_temperature"]. Use <code>inspect</code> to list what a recording carries.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="splitting"><code>splitting</code><a class="headerlink" href="#splitting" title="Permanent link">&para;</a></h2>
+<p>Two circadian components running at once, or the reason the record carries one.</p>
+<pre><code class="language-python">cw.call(&quot;splitting&quot;, recording, config=None, period_hours=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The cycle the phases live on. Omit to use the config's period_hours (24 h by default). A free-running cohort should pass its own tau, so that 'one cycle' means one of the animals' cycles rather than one solar day. <code>splitting</code> uses it for a second purpose that is the same idea: the period the resolution element P**2/T is worked out at, which sets how far apart two components must be before that record can show them to differ.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="ultradian"><code>ultradian</code><a class="headerlink" href="#ultradian" title="Permanent link">&para;</a></h2>
+<p>The strongest component faster than a day, and how large it is beside the daily one.</p>
+<pre><code class="language-python">cw.call(&quot;ultradian&quot;, recording, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="dose_response"><code>dose_response</code><a class="headerlink" href="#dose_response" title="Permanent link">&para;</a></h2>
+<p>Phase shift against stimulus dose at one circadian time: the half-maximal dose, the saturating maximum, and what was withheld.</p>
+<pre><code class="language-python">cw.call(&quot;dose_response&quot;, dose_points, config=None, dose_unit=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dose_points</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The phase shifts of one dose series, as [[dose, shift_hours, label, circadian_time], ...] or as objects with "dose", "shift_hours", an optional "label" naming the animal and an optional "circadian_time". One entry per animal per dose. The dose is in whatever unit the stimulus was measured in and the package never guesses which; the shift follows the Aschoff sign convention the rest of the package uses, advance positive.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>dose_unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>What the dose was measured in -- lux, uW/cm2, mg, photons. A label and nothing else: it is printed wherever a dose is printed and no arithmetic is done with it. Omit it and no unit appears anywhere, which is the honest output for a package that was not told what was measured.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="temperature_compensation"><code>temperature_compensation</code><a class="headerlink" href="#temperature_compensation" title="Permanent link">&para;</a></h2>
+<p>Q10 for the period across a temperature series, and whether the clock is compensated.</p>
+<pre><code class="language-python">cw.call(&quot;temperature_compensation&quot;, temperature_points, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>temperature_points</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>One entry per unit per temperature: [[20.0, 24.1, 'slice_1'], ...], or objects with temperature_c, period_hours and an optional label. Three slices at each of three temperatures is nine entries, and the labels are what lets the interval be clustered on the slice rather than on the measurement.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="phase_map"><code>phase_map</code><a class="headerlink" href="#phase_map" title="Permanent link">&para;</a></h2>
+<p>Phase against position across regions: whether there is a wave, and which way and how fast it travels.</p>
+<pre><code class="language-python">cw.call(&quot;phase_map&quot;, points, config=None, period_hours=None, position_units='um')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>points</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours and position units</td>
+<td>One entry per region, each carrying a phase and a position: [{'label': 'left', 'phase_hours': 6.2, 'x': 120, 'y': 340}, ...]. A list of [label, phase_hours, x, y] arrays works too. The phases are ones the caller already measured -- acrophases from a cosinor, peak times, onsets -- and the positions are region centroids in whatever unit position_units names. Six regions is the floor; below it the plane is fitted but never tested.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>period_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>The cycle the phases live on. Omit to use the config's period_hours (24 h by default). A free-running cohort should pass its own tau, so that 'one cycle' means one of the animals' cycles rather than one solar day. <code>splitting</code> uses it for a second purpose that is the same idea: the period the resolution element P**2/T is worked out at, which sets how far apart two components must be before that record can show them to differ.</td>
+</tr>
+<tr>
+<td><code>position_units</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"um"</code></td>
+<td>-</td>
+<td>What the x and y in points are measured in: 'um', 'px', 'mm'. It travels through to the reported speed, which comes back in these units per hour. Nothing is converted -- this is a label, so pass the unit the positions are actually in.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="coupling"><code>coupling</code><a class="headerlink" href="#coupling" title="Permanent link">&para;</a></h2>
+<p>How far one named trace leads another, whether that lag is a number, and whether it held.</p>
+<pre><code class="language-python">cw.call(&quot;coupling&quot;, series_a, series_b, hours, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>series_a</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>recording units</td>
+<td>The first trace: {'label': 'left lobe', 'values': [...]} on the shared hours grid. A [label, values] array works too. The label is reported back as the one that leads or lags, so make it the name you would use in a figure.</td>
+</tr>
+<tr>
+<td><code>series_b</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>recording units</td>
+<td>The second trace, same shape as series_a and on the same hours grid. The reported lag is negative when series_a peaks first.</td>
+</tr>
+<tr>
+<td><code>hours</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours</td>
+<td>The shared time grid the traces are sampled on, in hours from the start of the recording.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="sample_size"><code>sample_size</code><a class="headerlink" href="#sample_size" title="Permanent link">&para;</a></h2>
+<p>How many units a difference needs, or what power a given n has, by simulating the test that will actually be run.</p>
+<pre><code class="language-python">cw.call(&quot;sample_size&quot;, question='phase_difference', difference, resultant_length=0.8, n_per_group=None, target_power=0.8, config=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>question</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"phase_difference"</code></td>
+<td>-</td>
+<td>Which power question to answer: 'phase_difference' for two groups of phases compared on the circle, or 'mesor', 'amplitude' or 'rhythm_phase' for a cosinor parameter compared between two cohorts. 'observed' asks for post-hoc observed power and is refused with the reason, because it is a restatement of the p-value you already have.</td>
+</tr>
+<tr>
+<td><code>difference</code></td>
+<td>float</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>hours or recording units</td>
+<td>The smallest difference worth detecting, in the parameter's own units: hours for a phase, recording units for a mesor or an amplitude. Not the difference you observed -- the one that would change your mind.</td>
+</tr>
+<tr>
+<td><code>resultant_length</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.8</code></td>
+<td>-</td>
+<td>How tightly the phases within a group cluster, from 0 (scattered) to just under 1 (identical). This is the R that phase_comparison reports, so a pilot's number goes straight in. Only used by the phase_difference question.</td>
+</tr>
+<tr>
+<td><code>n_per_group</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>units per group</td>
+<td>Give it to ask 'what power do I have at this n'. Leave it out to ask 'how many do I need', which searches over n instead.</td>
+</tr>
+<tr>
+<td><code>target_power</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.8</code></td>
+<td>-</td>
+<td>The power the search aims for when n_per_group is not given. 0.8 by convention; the returned n is the smallest whose interval clears it, not whose point estimate does.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="compare_rhythms"><code>compare_rhythms</code><a class="headerlink" href="#compare_rhythms" title="Permanent link">&para;</a></h2>
+<p>Fit one cosinor to two groups and test which rhythm parameter differs.</p>
+<pre><code class="language-python">cw.call(&quot;compare_rhythms&quot;, groups, config=None, unit='subject')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>groups</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Recordings grouped by label: {'WT': [spec, ...], 'KO': [...]}.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"subject"</code></td>
+<td>-</td>
+<td>Unit of analysis: subject, slice, or cell.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="group_comparison"><code>group_comparison</code><a class="headerlink" href="#group_comparison" title="Permanent link">&para;</a></h2>
+<p>Two-way mixed RM ANOVA with pointwise post-hoc across groups.</p>
+<pre><code class="language-python">cw.call(&quot;group_comparison&quot;, groups, config=None, alpha=0.05, correction='sidak', unit='subject', sphericity='greenhouse_geisser')
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>groups</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Recordings grouped by label: {'WT': [spec, ...], 'KO': [...]}.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.05</code></td>
+<td>-</td>
+<td>Group-comparison significance threshold.</td>
+</tr>
+<tr>
+<td><code>correction</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"sidak"</code></td>
+<td>-</td>
+<td>sidak, bonferroni, or none.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"subject"</code></td>
+<td>-</td>
+<td>Unit of analysis: subject, slice, or cell.</td>
+</tr>
+<tr>
+<td><code>sphericity</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"greenhouse_geisser"</code></td>
+<td>-</td>
+<td>greenhouse_geisser, huynh_feldt, or none.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="render_group_figure"><code>render_group_figure</code><a class="headerlink" href="#render_group_figure" title="Permanent link">&para;</a></h2>
+<p>Render the group overlay and optional significance bar to SVG.</p>
+<pre><code class="language-python">cw.call(&quot;render_group_figure&quot;, groups, config=None, normalize='own_mean', time_axis='clock_time', pool_order='profile_then_pool', statistic='mean', within_recording_reducer='mean', detrended=False, alpha=0.05, correction='sidak', unit='subject', sphericity='greenhouse_geisser', statistics=True, figure_options=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>groups</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Recordings grouped by label: {'WT': [spec, ...], 'KO': [...]}.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>normalize</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"own_mean"</code></td>
+<td>-</td>
+<td>Value normalisation before pooling.</td>
+</tr>
+<tr>
+<td><code>time_axis</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"clock_time"</code></td>
+<td>-</td>
+<td>clock_time, tau_scaled, or onset_aligned.</td>
+</tr>
+<tr>
+<td><code>pool_order</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"profile_then_pool"</code></td>
+<td>-</td>
+<td>profile_then_pool or virtual_animal.</td>
+</tr>
+<tr>
+<td><code>statistic</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>mean or median.</td>
+</tr>
+<tr>
+<td><code>within_recording_reducer</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>How each recording contributes at each phase bin before pooling: mean averages selected cycles; max retains the largest observed binned value across the selected recording.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Whether inputs are already baseline-subtracted.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.05</code></td>
+<td>-</td>
+<td>Group-comparison significance threshold.</td>
+</tr>
+<tr>
+<td><code>correction</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"sidak"</code></td>
+<td>-</td>
+<td>sidak, bonferroni, or none.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"subject"</code></td>
+<td>-</td>
+<td>Unit of analysis: subject, slice, or cell.</td>
+</tr>
+<tr>
+<td><code>sphericity</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"greenhouse_geisser"</code></td>
+<td>-</td>
+<td>greenhouse_geisser, huynh_feldt, or none.</td>
+</tr>
+<tr>
+<td><code>statistics</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>true</code></td>
+<td>-</td>
+<td>Whether to compute and render group statistics.</td>
+</tr>
+<tr>
+<td><code>figure_options</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Optional group SVG presentation options: colors/color_map, x_bounds, x_ticks or x_tick_step, x_tick_label_offset, x_label, y_label, title, margin, legend, text_scale, title_scale, axis_scale, tick_scale, legend_scale, show_grid, group_order/order, style/house_style. style defaults to 'pyflash' for PyFLASH-compatible typography, outward ticks, frameless legends and left/bottom spines.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="diagnosis_groups"><code>diagnosis_groups</code><a class="headerlink" href="#diagnosis_groups" title="Permanent link">&para;</a></h2>
+<p>Resolve cohort metadata into diagnosis-labelled recording groups.</p>
+<pre><code class="language-python">cw.call(&quot;diagnosis_groups&quot;, cohort)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cohort</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Metadata-driven cohort spec. Requires metadata_csv plus either a recording_column or recording_pattern; groups rows by diagnosis_column, defaulting to a diagnosis/condition/group-like column. Optional exclude_subjects removes participant IDs without editing source metadata. Optional mask_csv supplies one start/end analysis interval per subject; mask_subject_column, mask_start_column, and mask_end_column override its inferred columns.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="study_report"><code>study_report</code><a class="headerlink" href="#study_report" title="Permanent link">&para;</a></h2>
+<p>One document for a whole study: the named analyses run on every recording of a cohort, the scalar table they produce, the group and paired comparisons, and every recording's checksum.</p>
+<pre><code class="language-python">cw.call(&quot;study_report&quot;, cohort, analyses, config=None, epoch_column=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cohort</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Metadata-driven cohort spec. Requires metadata_csv plus either a recording_column or recording_pattern; groups rows by diagnosis_column, defaulting to a diagnosis/condition/group-like column. Optional exclude_subjects removes participant IDs without editing source metadata. Optional mask_csv supplies one start/end analysis interval per subject; mask_subject_column, mask_start_column, and mask_end_column override its inferred columns.</td>
+</tr>
+<tr>
+<td><code>analyses</code></td>
+<td>array</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Action names to run on every recording of the study, e.g. ["cosinor", "sleep"]. Each is dispatched through this same registry, so a number in the report is the number that action returns on its own; run discover for the list of names.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>epoch_column</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Metadata column naming which epoch each recording belongs to, e.g. "epoch" holding baseline/treatment. Where it names exactly two epochs and subjects appear in both, the report runs the paired comparison; where it does not, the report says which of those it was. Omit it for a study with one epoch.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="render_diagnosis_profile"><code>render_diagnosis_profile</code><a class="headerlink" href="#render_diagnosis_profile" title="Permanent link">&para;</a></h2>
+<p>Render a diagnosis-condition average activity profile overlay from cohort metadata.</p>
+<pre><code class="language-python">cw.call(&quot;render_diagnosis_profile&quot;, cohort, config=None, normalize='own_mean', time_axis='clock_time', pool_order='profile_then_pool', statistic='mean', within_recording_reducer='mean', detrended=False, alpha=0.05, correction='sidak', unit='subject', sphericity='greenhouse_geisser', statistics=True, figure_options=None)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>cohort</code></td>
+<td>object</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>Metadata-driven cohort spec. Requires metadata_csv plus either a recording_column or recording_pattern; groups rows by diagnosis_column, defaulting to a diagnosis/condition/group-like column. Optional exclude_subjects removes participant IDs without editing source metadata. Optional mask_csv supplies one start/end analysis interval per subject; mask_subject_column, mask_start_column, and mask_end_column override its inferred columns.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>normalize</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"own_mean"</code></td>
+<td>-</td>
+<td>Value normalisation before pooling.</td>
+</tr>
+<tr>
+<td><code>time_axis</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"clock_time"</code></td>
+<td>-</td>
+<td>clock_time, tau_scaled, or onset_aligned.</td>
+</tr>
+<tr>
+<td><code>pool_order</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"profile_then_pool"</code></td>
+<td>-</td>
+<td>profile_then_pool or virtual_animal.</td>
+</tr>
+<tr>
+<td><code>statistic</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>mean or median.</td>
+</tr>
+<tr>
+<td><code>within_recording_reducer</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>How each recording contributes at each phase bin before pooling: mean averages selected cycles; max retains the largest observed binned value across the selected recording.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Whether inputs are already baseline-subtracted.</td>
+</tr>
+<tr>
+<td><code>alpha</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.05</code></td>
+<td>-</td>
+<td>Group-comparison significance threshold.</td>
+</tr>
+<tr>
+<td><code>correction</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"sidak"</code></td>
+<td>-</td>
+<td>sidak, bonferroni, or none.</td>
+</tr>
+<tr>
+<td><code>unit</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"subject"</code></td>
+<td>-</td>
+<td>Unit of analysis: subject, slice, or cell.</td>
+</tr>
+<tr>
+<td><code>sphericity</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"greenhouse_geisser"</code></td>
+<td>-</td>
+<td>greenhouse_geisser, huynh_feldt, or none.</td>
+</tr>
+<tr>
+<td><code>statistics</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>true</code></td>
+<td>-</td>
+<td>Whether to compute and render group statistics.</td>
+</tr>
+<tr>
+<td><code>figure_options</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Optional group SVG presentation options: colors/color_map, x_bounds, x_ticks or x_tick_step, x_tick_label_offset, x_label, y_label, title, margin, legend, text_scale, title_scale, axis_scale, tick_scale, legend_scale, show_grid, group_order/order, style/house_style. style defaults to 'pyflash' for PyFLASH-compatible typography, outward ticks, frameless legends and left/bottom spines.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="clear_output"><code>clear_output</code><a class="headerlink" href="#clear_output" title="Permanent link">&para;</a></h2>
+<p>Delete generated files under the output root after confirmation.</p>
+<pre><code class="language-python">cw.call(&quot;clear_output&quot;, confirm=False)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>confirm</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Explicit confirmation for a destructive action.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../..", "features": ["navigation.sections", "navigation.indexes", "navigation.tracking", "navigation.top", "search.suggest", "search.highlight", "toc.follow", "content.code.copy"], "search": "../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
