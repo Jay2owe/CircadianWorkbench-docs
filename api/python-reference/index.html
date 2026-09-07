@@ -241,6 +241,8 @@
       
         
       
+        
+      
     
     
     
@@ -338,6 +340,34 @@
     
   
     Choose a detrending method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a normalisation method
   
 
     
@@ -2685,6 +2715,9 @@
 </tr>
 </tbody>
 </table>
+<h2 id="cwnormalization_methods-result"><code>cw.normalization_methods() -&gt; 'Result'</code><a class="headerlink" href="#cwnormalization_methods-result" title="Permanent link">&para;</a></h2>
+<p>Return every value-normalisation method, formula, alias and requirement.</p>
+<p>This function has no parameters.</p>
 <h2 id="cwaskquestion-str-source-any-none-root-str-path-none-none-settings-mappingstr-any-none-none-params-any-result"><code>cw.ask(question: 'str', *, source: 'Any' = None, root: 'str | Path | None' = None, settings: 'Mapping[str, Any] | None' = None, **params: 'Any') -&gt; 'Result'</code><a class="headerlink" href="#cwaskquestion-str-source-any-none-root-str-path-none-none-settings-mappingstr-any-none-none-params-any-result" title="Permanent link">&para;</a></h2>
 <p>Run one reviewed question or fixed alias; never guesses an action.</p>
 <table>
@@ -2995,6 +3028,86 @@
 <td style="text-align: center;">no</td>
 <td><code>null</code></td>
 <td>Leading duration removed before fitting.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Partial configuration overrides; omitted keys use live defaults.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="recordingcallernormalizeself-method-str-minmax-target_min-float-10-target_max-float-10-reference_value-float-none-none-reference_start_hours-float-none-none-reference_end_hours-float-none-none-reference_statistic-str-mean-standard_deviation_ddof-int-0-detrended-bool-false-envelope_floor_fraction-float-01-settings-mappingstr-any-none-none-result"><code>RecordingCaller.normalize(self, method: 'str' = 'minmax', *, target_min: 'float' = -1.0, target_max: 'float' = 1.0, reference_value: 'float | None' = None, reference_start_hours: 'float | None' = None, reference_end_hours: 'float | None' = None, reference_statistic: 'str' = 'mean', standard_deviation_ddof: 'int' = 0, detrended: 'bool' = False, envelope_floor_fraction: 'float' = 0.1, settings: 'Mapping[str, Any] | None' = None) -&gt; 'Result'</code><a class="headerlink" href="#recordingcallernormalizeself-method-str-minmax-target_min-float-10-target_max-float-10-reference_value-float-none-none-reference_start_hours-float-none-none-reference_end_hours-float-none-none-reference_statistic-str-mean-standard_deviation_ddof-int-0-detrended-bool-false-envelope_floor_fraction-float-01-settings-mappingstr-any-none-none-result" title="Permanent link">&para;</a></h2>
+<p>Normalise the selected trace through the shared scientific core.</p>
+<table>
+<thead>
+<tr>
+<th>Argument</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"minmax"</code></td>
+<td>One registered period or detrending method, depending on the function.</td>
+</tr>
+<tr>
+<td><code>target_min</code></td>
+<td style="text-align: center;">no</td>
+<td><code>-1.0</code></td>
+<td>Lower endpoint used only by min–max normalisation.</td>
+</tr>
+<tr>
+<td><code>target_max</code></td>
+<td style="text-align: center;">no</td>
+<td><code>1.0</code></td>
+<td>Upper endpoint used only by min–max normalisation; it must exceed <code>target_min</code>.</td>
+</tr>
+<tr>
+<td><code>reference_value</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Explicit non-zero baseline used by reference-based normalisations; omit it when supplying a reference window.</td>
+</tr>
+<tr>
+<td><code>reference_start_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Inclusive start of the baseline window, paired with <code>reference_end_hours</code>.</td>
+</tr>
+<tr>
+<td><code>reference_end_hours</code></td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>Inclusive end of the baseline window, paired with <code>reference_start_hours</code>.</td>
+</tr>
+<tr>
+<td><code>reference_statistic</code></td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>Reduce the reference window with its <code>mean</code> or <code>median</code>.</td>
+</tr>
+<tr>
+<td><code>standard_deviation_ddof</code></td>
+<td style="text-align: center;">no</td>
+<td><code>0</code></td>
+<td>Degrees of freedom removed from the z-score divisor: 0 for a population or 1 for a sample.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>Declare that values are already baseline-subtracted so incompatible mean-based scaling is refused.</td>
+</tr>
+<tr>
+<td><code>envelope_floor_fraction</code></td>
+<td style="text-align: center;">no</td>
+<td><code>0.1</code></td>
+<td>For envelope normalisation, replace unstable tail values after the fitted amplitude falls below this fraction with missing values.</td>
 </tr>
 <tr>
 <td><code>settings</code></td>

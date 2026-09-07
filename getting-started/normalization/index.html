@@ -10,13 +10,13 @@
       
       
       
-        <link rel="canonical" href="https://jay2owe.github.io/CircadianWorkbench-docs/workflows/period-choice/">
+        <link rel="canonical" href="https://jay2owe.github.io/CircadianWorkbench-docs/getting-started/normalization/">
       
       
-        <link rel="prev" href="../first-recording/">
+        <link rel="prev" href="../detrending/">
       
       
-        <link rel="next" href="../entrainment-and-perturbation/">
+        <link rel="next" href="../../api/">
       
       
         
@@ -27,7 +27,7 @@
     
     
       
-        <title>Choose a period estimate - Circadian Workbench</title>
+        <title>Choose a normalisation method - Circadian Workbench</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#choose-a-period-estimate" class="md-skip">
+        <a href="#choose-a-normalisation-method" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Choose a period estimate
+              Choose a normalisation method
             
           </span>
         </div>
@@ -228,6 +228,8 @@
       
   
   
+    
+  
   
   
     
@@ -252,15 +254,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../getting-started/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   
@@ -284,7 +286,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -304,7 +306,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/supported-files/" class="md-nav__link">
+      <a href="../supported-files/" class="md-nav__link">
         
   
   
@@ -332,7 +334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../getting-started/detrending/" class="md-nav__link">
+      <a href="../detrending/" class="md-nav__link">
         
   
   
@@ -357,10 +359,37 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../getting-started/normalization/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a normalisation method
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -376,6 +405,70 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-the-methods-do" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What the methods do
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#call-it-from-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Call it from Python
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#every-argument" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Every argument
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#choosing-safely" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing safely
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1756,8 +1849,6 @@
       
   
   
-    
-  
   
   
     
@@ -1794,15 +1885,15 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../workflows/" class="md-nav__link ">
               
   
   
@@ -1826,7 +1917,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             
@@ -1846,7 +1937,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../first-recording/" class="md-nav__link">
+      <a href="../../workflows/first-recording/" class="md-nav__link">
         
   
   
@@ -1871,37 +1962,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    Choose a period estimate
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../workflows/period-choice/" class="md-nav__link">
         
   
   
@@ -1917,103 +1981,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#question" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Question
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What you need
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#click-path" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Click path
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-success-looks-like" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What success looks like
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-does-not-prove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What it does not prove
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-gets-saved" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What gets saved
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related explanation
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2026,7 +1993,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../entrainment-and-perturbation/" class="md-nav__link">
+      <a href="../../workflows/entrainment-and-perturbation/" class="md-nav__link">
         
   
   
@@ -2054,7 +2021,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../sleep-and-ultradian/" class="md-nav__link">
+      <a href="../../workflows/sleep-and-ultradian/" class="md-nav__link">
         
   
   
@@ -2082,7 +2049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../within-recording-population/" class="md-nav__link">
+      <a href="../../workflows/within-recording-population/" class="md-nav__link">
         
   
   
@@ -2110,7 +2077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../prediction-and-design/" class="md-nav__link">
+      <a href="../../workflows/prediction-and-design/" class="md-nav__link">
         
   
   
@@ -2138,7 +2105,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../publication-export/" class="md-nav__link">
+      <a href="../../workflows/publication-export/" class="md-nav__link">
         
   
   
@@ -2166,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../project-replay/" class="md-nav__link">
+      <a href="../../workflows/project-replay/" class="md-nav__link">
         
   
   
@@ -2194,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../backup-rehearsal/" class="md-nav__link">
+      <a href="../../workflows/backup-rehearsal/" class="md-nav__link">
         
   
   
@@ -2571,10 +2538,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#question" class="md-nav__link">
+  <a href="#what-the-methods-do" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Question
+        What the methods do
       
     </span>
   </a>
@@ -2582,10 +2549,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-you-need" class="md-nav__link">
+  <a href="#call-it-from-python" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What you need
+        Call it from Python
       
     </span>
   </a>
@@ -2593,10 +2560,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#click-path" class="md-nav__link">
+  <a href="#every-argument" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Click path
+        Every argument
       
     </span>
   </a>
@@ -2604,43 +2571,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#what-success-looks-like" class="md-nav__link">
+  <a href="#choosing-safely" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What success looks like
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-it-does-not-prove" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What it does not prove
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#what-gets-saved" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        What gets saved
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#related-explanation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Related explanation
+        Choosing safely
       
     </span>
   </a>
@@ -2664,27 +2598,267 @@
 
 
 
-<h1 id="choose-a-period-estimate">Choose a period estimate<a class="headerlink" href="#choose-a-period-estimate" title="Permanent link">&para;</a></h1>
-<h2 id="question">Question<a class="headerlink" href="#question" title="Permanent link">&para;</a></h2>
-<p>Which period should define folding or a downstream model?</p>
-<h2 id="what-you-need">What you need<a class="headerlink" href="#what-you-need" title="Permanent link">&para;</a></h2>
-<p>A recording with several observable cycles and a defensible selected interval.</p>
-<h2 id="click-path">Click path<a class="headerlink" href="#click-path" title="Permanent link">&para;</a></h2>
+<h1 id="choose-a-normalisation-method">Choose a normalisation method<a class="headerlink" href="#choose-a-normalisation-method" title="Permanent link">&para;</a></h1>
+<p>Normalisation changes the vertical ruler, not the time series. Think of reporting
+the same temperature in Celsius, Fahrenheit, or distance from a chosen baseline:
+the peaks happen at the same times, but the numbers answer different questions.</p>
+<p>Use min–max scaling to compare shape, a standard score to compare deviations,
+and a reference-based ratio when the baseline itself has scientific meaning.
+Circadian Workbench never guesses the reference interval.</p>
+<h2 id="what-the-methods-do">What the methods do<a class="headerlink" href="#what-the-methods-do" title="Permanent link">&para;</a></h2>
+<p><img alt="All eighteen normalisation methods applied to the same deterministic trace" src="../../gallery/plots/normalization-methods/normalization-methods.svg" /></p>
+<p>Every panel was calculated by the public <code>normalize</code> action. Orange marks the
+inclusive 0–24 hour reference window used by reference-based methods. The exact
+plotted values, source hashes, and producer are retained in the figure bundle.</p>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Calculation</th>
+<th>Use it when</th>
+<th>Main caution</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>none</code> (<code>raw</code>, <code>unscaled</code>)</td>
+<td><code>x</code></td>
+<td>Original units matter</td>
+<td>Traces with different baselines or amplitudes remain difficult to compare.</td>
+</tr>
+<tr>
+<td><code>mean_center</code> (<code>center</code>, <code>centre</code>)</td>
+<td><code>x - mean(x)</code></td>
+<td>Compare deviations around each trace's mean</td>
+<td>Amplitude and original zero remain unchanged.</td>
+</tr>
+<tr>
+<td><code>median_center</code></td>
+<td><code>x - median(x)</code></td>
+<td>Centre a trace while reducing sensitivity to isolated extremes</td>
+<td>It centres but does not scale amplitude.</td>
+</tr>
+<tr>
+<td><code>zscore</code> (<code>z</code>, <code>standard_score</code>)</td>
+<td><code>(x - mean(x)) / standard_deviation(x)</code></td>
+<td>Compare distance from each trace's centre in standard-deviation units</td>
+<td>Sensitive to outliers; choose the population or sample divisor explicitly.</td>
+</tr>
+<tr>
+<td><code>robust_zscore</code> (<code>robust_z</code>, <code>median_mad</code>)</td>
+<td><code>(x - median(x)) / normal_consistent_MAD(x)</code></td>
+<td>Outliers would distort the mean and standard deviation</td>
+<td>Requires a non-zero median absolute deviation (MAD).</td>
+</tr>
+<tr>
+<td><code>robust_scale</code> (<code>robust_scaler</code>, <code>iqr_scale</code>)</td>
+<td><code>(x - median(x)) / IQR(x)</code></td>
+<td>Compare centred values while reducing the influence of extreme tails</td>
+<td>The interquartile range (IQR), the middle 50% span, must be non-zero.</td>
+</tr>
+<tr>
+<td><code>minmax</code> (<code>range</code>, <code>min_max</code>)</td>
+<td><code>target_min + (x - min(x)) / range(x) * target_span</code></td>
+<td>Compare waveform shape on a fixed range; the friendly default is −1 to 1</td>
+<td>One extreme fixes the scale; a constant trace has no range.</td>
+</tr>
+<tr>
+<td><code>max_abs</code> (<code>extreme</code>, <code>to_extreme</code>, <code>maxabs</code>, <code>peak</code>)</td>
+<td><code>x / max(abs(x))</code></td>
+<td>Scale to the largest absolute observed value without recentring</td>
+<td>Positive-only traces occupy 0 to 1; signed traces can occupy −1 to 1.</td>
+</tr>
+<tr>
+<td><code>own_mean</code></td>
+<td><code>x / mean(x)</code></td>
+<td>Express each value as a fold of that trace's whole-span mean</td>
+<td>The whole record is the reference; do not use after baseline subtraction.</td>
+</tr>
+<tr>
+<td><code>own_daily_total</code></td>
+<td><code>x / sum(x)</code></td>
+<td>Express bins as fractions of a folded daily profile's total</td>
+<td>On an unfolded record it is the fraction of the selected record total, not a daily rate.</td>
+</tr>
+<tr>
+<td><code>reference_delta</code> (<code>delta</code>, <code>absolute_change</code>)</td>
+<td><code>x - reference</code></td>
+<td>Absolute change in the original measurement units matters</td>
+<td>Requires an explicit value or window, but the reference itself may be zero.</td>
+</tr>
+<tr>
+<td><code>fold_change</code> (<code>fold</code>, <code>ratio</code>)</td>
+<td><code>x / reference</code></td>
+<td>A treatment or control baseline has direct meaning</td>
+<td>Requires a non-zero explicit value or reference window.</td>
+</tr>
+<tr>
+<td><code>delta_over_reference</code> (<code>dff</code>, <code>delta_f_over_f</code>, <code>relative_change</code>)</td>
+<td><code>(x - reference) / reference</code></td>
+<td>Report fractional change, including delta-F over F (ΔF/F) imaging traces</td>
+<td>Requires a non-zero reference; multiply by 100 only when a percentage is wanted.</td>
+</tr>
+<tr>
+<td><code>log2_fold_change</code> (<code>log2fc</code>)</td>
+<td><code>log2(x / reference)</code></td>
+<td>Equal fold increases and decreases should be symmetric around zero</td>
+<td>Every finite value-to-reference ratio must be positive.</td>
+</tr>
+<tr>
+<td><code>percent_of_reference</code> (<code>percent</code>)</td>
+<td><code>100 * x / reference</code></td>
+<td>The reference should read as 100%</td>
+<td>Requires a non-zero reference.</td>
+</tr>
+<tr>
+<td><code>percent_change</code> (<code>delta_percent</code>)</td>
+<td><code>100 * (x / reference - 1)</code></td>
+<td>The reference should read as 0% change</td>
+<td>Requires a non-zero reference.</td>
+</tr>
+<tr>
+<td><code>pre_treatment_cycle</code> (<code>pre_treatment</code>)</td>
+<td><code>x / pre_treatment_mean</code></td>
+<td>Values should be relative to a defined pre-treatment cycle</td>
+<td>This is a named fold change; the pre-treatment interval must be supplied.</td>
+</tr>
+<tr>
+<td><code>envelope</code></td>
+<td><code>(x - fitted_trough) / (fitted_peak - fitted_trough)</code></td>
+<td>A damped rhythm should be compared within its changing fitted amplitude</td>
+<td>Fits a damped oscillation; unstable late tails become missing rather than exploding.</td>
+</tr>
+</tbody>
+</table>
+<p>Missing input values remain missing under every method.</p>
+<p>The standard-score and median absolute deviation conventions follow
+<a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.mstats.zscore.html">SciPy's z-score</a>
+and <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.median_abs_deviation.html">median absolute deviation</a>
+definitions. The range, maximum-absolute-value, and interquartile-range forms
+match the one-feature transformations documented by
+<a href="https://scikit-learn.org/stable/modules/preprocessing.html">scikit-learn</a>.</p>
+<h2 id="call-it-from-python">Call it from Python<a class="headerlink" href="#call-it-from-python" title="Permanent link">&para;</a></h2>
+<p>The catalogue is live, so downstream packages can discover new methods without
+copying a second list:</p>
+<pre><code class="language-python">import circadian_workbench as cw
+
+catalogue = cw.normalization_methods()
+</code></pre>
+<p>Bind a file or an in-memory trace, then choose the scale:</p>
+<pre><code class="language-python">trace = cw.open(&quot;mouse01.awd&quot;)
+
+symmetric = trace.normalize(
+    method=&quot;minmax&quot;,
+    target_min=-1,
+    target_max=1,
+)
+
+relative_to_day_one = trace.normalize(
+    method=&quot;fold_change&quot;,
+    reference_start_hours=0,
+    reference_end_hours=24,
+    reference_statistic=&quot;mean&quot;,
+)
+</code></pre>
+<p><code>cw.trace(hours, values).normalize(...)</code> uses the same method for arrays. The
+direct registered action uses <code>normalization_method</code> instead of <code>method</code>:</p>
+<pre><code class="language-python">result = cw.call(
+    &quot;normalize&quot;,
+    recording={&quot;path&quot;: &quot;mouse01.awd&quot;},
+    normalization_method=&quot;zscore&quot;,
+    standard_deviation_ddof=0,
+)
+</code></pre>
+<h2 id="every-argument">Every argument<a class="headerlink" href="#every-argument" title="Permanent link">&para;</a></h2>
+<p><code>cw.normalization_methods()</code> takes no arguments. Each returned catalogue row
+contains the canonical <code>key</code>, display <code>label</code>, exact <code>formula</code>, <code>aliases</code>,
+whether it <code>requires_reference</code>, and whether it supports already detrended data.</p>
+<table>
+<thead>
+<tr>
+<th><code>normalize</code> argument</th>
+<th style="text-align: right;">Default</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method</code></td>
+<td style="text-align: right;"><code>"minmax"</code></td>
+<td>Canonical method or alias from the live catalogue. The direct action calls this <code>normalization_method</code>.</td>
+</tr>
+<tr>
+<td><code>target_min</code></td>
+<td style="text-align: right;"><code>-1.0</code></td>
+<td>Lower endpoint for <code>minmax</code>; ignored by other methods.</td>
+</tr>
+<tr>
+<td><code>target_max</code></td>
+<td style="text-align: right;"><code>1.0</code></td>
+<td>Upper endpoint for <code>minmax</code>; must exceed <code>target_min</code>.</td>
+</tr>
+<tr>
+<td><code>reference_value</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td>Direct denominator for reference-based methods. Supply this or a time window, never both.</td>
+</tr>
+<tr>
+<td><code>reference_start_hours</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td>Inclusive start of the baseline interval, in elapsed hours; it must be paired with <code>reference_end_hours</code>.</td>
+</tr>
+<tr>
+<td><code>reference_end_hours</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td>Inclusive end of the baseline interval; it must exceed <code>reference_start_hours</code>.</td>
+</tr>
+<tr>
+<td><code>reference_statistic</code></td>
+<td style="text-align: right;"><code>"mean"</code></td>
+<td>Reduce the reference interval with its <code>mean</code> or <code>median</code>.</td>
+</tr>
+<tr>
+<td><code>standard_deviation_ddof</code></td>
+<td style="text-align: right;"><code>0</code></td>
+<td>Degrees of freedom removed from the z-score divisor: <code>0</code> treats the values as the population and <code>1</code> uses the sample estimate.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td style="text-align: right;"><code>False</code></td>
+<td>Declares that the input has already been baseline-subtracted. It does not detrend the trace; it prevents incompatible mean-based division.</td>
+</tr>
+<tr>
+<td><code>envelope_floor_fraction</code></td>
+<td style="text-align: right;"><code>0.1</code></td>
+<td>For <code>envelope</code>, later values become missing when the fitted amplitude falls below this fraction of its starting amplitude. It must be at least 0 and below 1.</td>
+</tr>
+<tr>
+<td><code>settings</code></td>
+<td style="text-align: right;"><code>None</code></td>
+<td>Partial Circadian Workbench settings used while selecting a file-backed recording, including channel and analysis interval.</td>
+</tr>
+</tbody>
+</table>
+<p>The direct action additionally accepts <code>recording</code>, the file or in-memory trace,
+and <code>config</code>, the complete or partial settings object. Its returned data includes
+<code>hours</code>, transformed <code>values</code>, canonical <code>method</code>, <code>y_axis_label</code>, divisor or
+reference metadata where applicable, and the selected recording provenance.</p>
+<h2 id="choosing-safely">Choosing safely<a class="headerlink" href="#choosing-safely" title="Permanent link">&para;</a></h2>
 <ol>
-<li>Inspect the core periodograms for edge peaks and harmonics.</li>
-<li>Choose <strong>Workbench → Compare period estimates</strong>.</li>
-<li>Run unlike methods over the same candidate range.</li>
-<li>If period drifts, run <strong>Track phase and period</strong>.</li>
-<li>Adopt a period only after checking coverage, uncertainty, and warnings.</li>
+<li>Decide whether the comparison is about shape, deviation, or change from a
+   biologically defined baseline.</li>
+<li>Inspect the raw and transformed traces together; normalisation can make very
+   different absolute amplitudes look alike.</li>
+<li>Prefer an explicit reference window for treatment comparisons and record its
+   start, end, and statistic.</li>
+<li>Use robust z-scores when isolated extremes are measurement artefacts, not
+   biological events.</li>
+<li>Do not use fold or log-fold measures when zero, sign changes, or negative
+   background-subtracted values make the ratio undefined.</li>
 </ol>
-<h2 id="what-success-looks-like">What success looks like<a class="headerlink" href="#what-success-looks-like" title="Permanent link">&para;</a></h2>
-<p>Several estimators support one neighbourhood and no result is pinned to the search boundary.</p>
-<h2 id="what-it-does-not-prove">What it does not prove<a class="headerlink" href="#what-it-does-not-prove" title="Permanent link">&para;</a></h2>
-<p>Estimator agreement does not prove endogenous rhythmicity or entrainment.</p>
-<h2 id="what-gets-saved">What gets saved<a class="headerlink" href="#what-gets-saved" title="Permanent link">&para;</a></h2>
-<p>Download result JSON or save the project; both preserve the selected range and methods.</p>
-<h2 id="related-explanation">Related explanation<a class="headerlink" href="#related-explanation" title="Permanent link">&para;</a></h2>
-<p><a href="../../analyses/compare-period-estimates/">Compare period estimates</a> · <a href="../../analyses/instantaneous-phase/">Instantaneous phase</a></p>
+<p>Normalisation does not remove drift, estimate a period, or establish
+rhythmicity. Use <a href="../detrending/">detrending</a> for a slow baseline and the period
+methods for rhythm estimation and false-alarm testing.</p>
 
 
 

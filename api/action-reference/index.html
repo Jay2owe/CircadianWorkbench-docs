@@ -241,6 +241,8 @@
       
         
       
+        
+      
     
     
     
@@ -338,6 +340,34 @@
     
   
     Choose a detrending method
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/normalization/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Choose a normalisation method
   
 
     
@@ -552,6 +582,28 @@
     <span class="md-ellipsis">
       
         normalize_config
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalization_methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalization_methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize
       
     </span>
   </a>
@@ -3245,6 +3297,28 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#normalization_methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalization_methods
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#normalize" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        normalize
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#load_recording" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -3977,7 +4051,7 @@
 
 
 <h1 id="complete-action-reference">Complete action reference<a class="headerlink" href="#complete-action-reference" title="Permanent link">&para;</a></h1>
-<p>This page is generated from the live registry and documents all 68 callable actions. The signature and parameter tables are therefore the contract enforced by the runner, not a parallel handwritten list.</p>
+<p>This page is generated from the live registry and documents all 70 callable actions. The signature and parameter tables are therefore the contract enforced by the runner, not a parallel handwritten list.</p>
 <p>All successful actions return data, warnings, provenance, and an equivalent replay script. File-writing actions place files under <code>root</code>; source recordings remain read-only.</p>
 <h2 id="inspect"><code>inspect</code><a class="headerlink" href="#inspect" title="Permanent link">&para;</a></h2>
 <p>Grounding snapshot: actions, defaults, and optional recording metadata.</p>
@@ -4042,6 +4116,126 @@
 <td><code>null</code></td>
 <td>-</td>
 <td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+</tbody>
+</table>
+<p>Config: <a href="../../parameters/config-reference/">all keys and defaults</a>.</p>
+<h2 id="normalization_methods"><code>normalization_methods</code><a class="headerlink" href="#normalization_methods" title="Permanent link">&para;</a></h2>
+<p>Every value-normalisation method, formula, alias and requirement.</p>
+<pre><code class="language-python">cw.call(&quot;normalization_methods&quot;)
+</code></pre>
+<p>This action has no parameters.</p>
+<h2 id="normalize"><code>normalize</code><a class="headerlink" href="#normalize" title="Permanent link">&para;</a></h2>
+<p>Normalise one selected trace with an explicit, reproducible method.</p>
+<pre><code class="language-python">cw.call(&quot;normalize&quot;, recording, config=None, normalization_method='minmax', target_min=-1.0, target_max=1.0, reference_value=None, reference_start_hours=None, reference_end_hours=None, reference_statistic='mean', standard_deviation_ddof=0, detrended=False, envelope_floor_fraction=0.1)
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th style="text-align: center;">Required</th>
+<th>Default</th>
+<th>Units</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>recording</code></td>
+<td>recording spec</td>
+<td style="text-align: center;">yes</td>
+<td>—</td>
+<td>-</td>
+<td>The record to analyse: {'path': 'data/m01.awd'} (a bare path string also works), {'demo': true} for the built-in deterministic record, {'inline': {'filename': ..., 'text': ...}} for tabular text, {'trace': {'hours': [...], 'values': [...], 'name': ...}} for one elapsed-time trace, or {'channels': {'hours': [...], 'values': {'reporter_a': [...], 'reporter_b': [...]}}} for several measurements from one subject.</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>object</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>-</td>
+<td>Partial analysis config. Missing keys fall back to analysis.DEFAULT_CONFIG and out-of-range values are clamped silently — run describe_config for every key, its default and its allowed values, or normalize_config to see what a given config actually becomes.</td>
+</tr>
+<tr>
+<td><code>normalization_method</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"minmax"</code></td>
+<td>-</td>
+<td>Transformation to apply. Canonical choices are none, mean_center, median_center, zscore, robust_zscore, robust_scale, own_mean, own_daily_total, minmax, max_abs, reference_delta, fold_change, delta_over_reference, log2_fold_change, percent_of_reference, percent_change, envelope and pre_treatment_cycle. Aliases include range for minmax, extreme or to_extreme for max_abs, z for zscore, dff for delta_over_reference, and fold for fold_change.</td>
+</tr>
+<tr>
+<td><code>target_min</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>-1.0</code></td>
+<td>normalised units</td>
+<td>Lower output bound for minmax range scaling; ignored by other methods.</td>
+</tr>
+<tr>
+<td><code>target_max</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>1.0</code></td>
+<td>normalised units</td>
+<td>Upper output bound for minmax range scaling; must exceed target_min.</td>
+</tr>
+<tr>
+<td><code>reference_value</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>recording units</td>
+<td>Explicit baseline for reference_delta, fold_change, delta_over_reference, log2_fold_change, percent_of_reference, percent_change or pre_treatment_cycle. Use this or a reference time window, never both.</td>
+</tr>
+<tr>
+<td><code>reference_start_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>Inclusive start of the baseline window, in hours from the selected recording start. Must be paired with reference_end_hours.</td>
+</tr>
+<tr>
+<td><code>reference_end_hours</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>null</code></td>
+<td>hours</td>
+<td>Inclusive end of the baseline window used to calculate the reference. Must exceed and be paired with reference_start_hours.</td>
+</tr>
+<tr>
+<td><code>reference_statistic</code></td>
+<td>string</td>
+<td style="text-align: center;">no</td>
+<td><code>"mean"</code></td>
+<td>-</td>
+<td>How a reference time window is reduced: mean or median.</td>
+</tr>
+<tr>
+<td><code>standard_deviation_ddof</code></td>
+<td>integer</td>
+<td style="text-align: center;">no</td>
+<td><code>0</code></td>
+<td>-</td>
+<td>Degrees of freedom removed from the z-score standard-deviation divisor: 0 for a population, 1 for a sample.</td>
+</tr>
+<tr>
+<td><code>detrended</code></td>
+<td>boolean</td>
+<td style="text-align: center;">no</td>
+<td><code>false</code></td>
+<td>-</td>
+<td>Whether inputs are already baseline-subtracted.</td>
+</tr>
+<tr>
+<td><code>envelope_floor_fraction</code></td>
+<td>float</td>
+<td style="text-align: center;">no</td>
+<td><code>0.1</code></td>
+<td>fraction</td>
+<td>For envelope normalisation, return missing values after the fitted oscillation envelope falls below this fraction of its starting amplitude. Must lie from 0 inclusive to 1 exclusive.</td>
 </tr>
 </tbody>
 </table>
@@ -5299,7 +5493,7 @@
 <td style="text-align: center;">no</td>
 <td><code>"own_mean"</code></td>
 <td>-</td>
-<td>Value normalisation before pooling.</td>
+<td>Value normalisation before pooling. Accepts none, mean_center, median_center, zscore, robust_zscore, robust_scale, own_mean, own_daily_total, minmax, max_abs, reference_delta, fold_change, delta_over_reference, log2_fold_change, percent_of_reference, percent_change, envelope or pre_treatment_cycle. Reference-based methods require reference metadata on each profile; use normalization_methods for formulas.</td>
 </tr>
 <tr>
 <td><code>time_axis</code></td>
@@ -6658,7 +6852,7 @@
 <td style="text-align: center;">no</td>
 <td><code>"own_mean"</code></td>
 <td>-</td>
-<td>Value normalisation before pooling.</td>
+<td>Value normalisation before pooling. Accepts none, mean_center, median_center, zscore, robust_zscore, robust_scale, own_mean, own_daily_total, minmax, max_abs, reference_delta, fold_change, delta_over_reference, log2_fold_change, percent_of_reference, percent_change, envelope or pre_treatment_cycle. Reference-based methods require reference metadata on each profile; use normalization_methods for formulas.</td>
 </tr>
 <tr>
 <td><code>time_axis</code></td>
@@ -6866,7 +7060,7 @@
 <td style="text-align: center;">no</td>
 <td><code>"own_mean"</code></td>
 <td>-</td>
-<td>Value normalisation before pooling.</td>
+<td>Value normalisation before pooling. Accepts none, mean_center, median_center, zscore, robust_zscore, robust_scale, own_mean, own_daily_total, minmax, max_abs, reference_delta, fold_change, delta_over_reference, log2_fold_change, percent_of_reference, percent_change, envelope or pre_treatment_cycle. Reference-based methods require reference metadata on each profile; use normalization_methods for formulas.</td>
 </tr>
 <tr>
 <td><code>time_axis</code></td>
